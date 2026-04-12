@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "carnells-auto-detail",
+    "name": "Carnell's Auto Detail",
+    "category": "Auto Detailing",
+    "city": "Sikeston",
+    "state": "MO",
+    "phone": "573-233-0291",
+    "address": "417 N. Main St., Sikeston, MO 63801",
+    "hours": "Monday–Friday 8:30 AM – 5:00 PM, Weekends Closed",
+    "what_they_do": "Full-service auto detailing and collision repair shop on N. Main Street in Sikeston, Missouri",
+    "no_website_confirmed": "Only presence found: Yelp listing and Yahoo Local — no standalone domain found. Facebook page also present.",
+    "talking_points": [
+      "Ask for owner's name to personalize the site header and About section",
+      "Confirm exact pricing for exterior, interior, and full detail packages",
+      "Ask if they offer mobile detailing or pick-up/drop-off service",
+      "Ask if they want a photo gallery (before/after shots work great for detailers)",
+      "Ask about any seasonal promotions or package deals",
+      "Confirm current hours — they may have Saturday availability"
+    ],
+    "file_path": "carnells-auto-detail/index.html"
+  }
+]
