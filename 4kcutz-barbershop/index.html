@@ -14,3 +14,186 @@
       --gray: #adb5bd;
       --white: #f8f9fa;
     }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: var(--white); }
+
+    /* NAV */
+    nav { background: #000; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--red); position: sticky; top: 0; z-index: 100; }
+    .brand { font-size: 1.6rem; font-weight: 900; letter-spacing: -1px; color: var(--white); }
+    .brand span { color: var(--gold); }
+    nav a.book { background: var(--red); color: var(--white); padding: 0.5rem 1.4rem; border-radius: 4px; font-weight: 700; text-decoration: none; font-size: 0.9rem; transition: background 0.2s; }
+    nav a.book:hover { background: #c1121f; }
+
+    /* HERO */
+    .hero { background: #000; padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center bottom, rgba(230,57,70,0.2) 0%, transparent 60%); }
+    .hero-tag { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--red); font-weight: 700; margin-bottom: 1rem; }
+    .hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; line-height: 0.9; letter-spacing: -3px; position: relative; z-index: 2; margin-bottom: 1.5rem; }
+    .hero h1 .line1 { display: block; color: var(--white); }
+    .hero h1 .line2 { display: block; color: var(--gold); }
+    .hero h1 .line3 { display: block; color: var(--red); }
+    .hero p { font-size: 1.1rem; color: var(--gray); max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.6; position: relative; z-index: 2; }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; z-index: 2; }
+    .btn-r { background: var(--red); color: var(--white); padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; transition: all 0.2s; display: inline-block; }
+    .btn-r:hover { background: #c1121f; transform: scale(1.03); }
+    .btn-y { background: var(--gold); color: #000; padding: 0.95rem 2.5rem; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; transition: all 0.2s; display: inline-block; }
+    .btn-y:hover { background: #ffe566; }
+
+    /* DISCOUNTS */
+    .disc-bar { background: var(--red); padding: 0.8rem 2rem; text-align: center; font-weight: 700; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; }
+    .disc-bar span { color: var(--gold); }
+
+    /* SERVICES */
+    .services { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .section-label { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--red); font-weight: 700; margin-bottom: 0.5rem; }
+    .section-h { font-size: 2rem; font-weight: 900; color: var(--white); margin-bottom: 2.5rem; }
+    .services-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .sc { background: var(--card); border: 1px solid #2a2a2a; padding: 1.8rem 1.5rem; border-radius: 8px; transition: border-color 0.2s, transform 0.2s; }
+    .sc:hover { border-color: var(--red); transform: translateY(-3px); }
+    .sc .ico { font-size: 2rem; margin-bottom: 0.8rem; }
+    .sc h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
+    .sc p { font-size: 0.85rem; color: var(--gray); line-height: 1.5; }
+    .sc .price { color: var(--gold); font-weight: 700; font-size: 0.9rem; margin-top: 0.7rem; }
+
+    /* HOURS */
+    .hours-section { background: var(--card); padding: 4rem 2rem; }
+    .hours-inner { max-width: 700px; margin: 0 auto; }
+    .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    @media (max-width: 500px) { .hours-grid { grid-template-columns: 1fr; } }
+    .hours-row { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.2rem; background: #222; border-radius: 6px; border-left: 3px solid var(--red); }
+    .hours-row .day { font-weight: 700; color: var(--white); font-size: 0.95rem; }
+    .hours-row .time { color: var(--gold); font-size: 0.9rem; }
+
+    /* ABOUT */
+    .about { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; }
+    .about-text { flex: 1; min-width: 260px; }
+    .about-text h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 1rem; color: var(--white); }
+    .about-text p { color: var(--gray); line-height: 1.7; margin-bottom: 0.8rem; }
+    .badges { flex: 0 0 240px; display: flex; flex-direction: column; gap: 1rem; }
+    .badge-item { background: var(--card); border: 1px solid #2a2a2a; border-radius: 8px; padding: 1.2rem 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
+    .badge-item .bi { font-size: 1.8rem; }
+    .badge-item div h4 { font-size: 0.95rem; font-weight: 700; }
+    .badge-item div p { font-size: 0.8rem; color: var(--gray); }
+
+    /* CTA */
+    .cta { background: var(--gold); padding: 4rem 2rem; text-align: center; }
+    .cta h2 { font-size: 2rem; font-weight: 900; color: #000; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.8rem; }
+    .cta p { color: rgba(0,0,0,0.65); margin-bottom: 1rem; font-size: 1.05rem; }
+    .cta .ph { font-size: 2.5rem; font-weight: 900; color: #000; text-decoration: none; display: block; margin-bottom: 1.5rem; }
+
+    /* FOOTER */
+    footer { background: #000; border-top: 2px solid var(--red); color: var(--gray); text-align: center; padding: 1.8rem; font-size: 0.85rem; }
+    footer strong { color: var(--white); }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="brand"><span>4K</span>Cutz</div>
+  <a class="book" href="tel:2703037412">📞 Book Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag">Premium Barbershop — Grenada, Mississippi</div>
+  <h1>
+    <span class="line1">SHARP</span>
+    <span class="line2">CUTS.</span>
+    <span class="line3">REAL CRAFT.</span>
+  </h1>
+  <p>Walk-ins welcome. Quality cuts for everyone. Student and senior discounts available. Come through to 4KCutz — Grenada's go-to barbershop.</p>
+  <div class="hero-actions">
+    <a class="btn-r" href="tel:2703037412">📞 Call to Book</a>
+    <a class="btn-y" href="#services">See Prices</a>
+  </div>
+</section>
+
+<div class="disc-bar">✅ WKU Discounts &nbsp;|&nbsp; <span>Senior Citizen Discounts</span> &nbsp;|&nbsp; Walk-Ins Welcome</div>
+
+<section class="services" id="services">
+  <div class="section-label">What We Offer</div>
+  <div class="section-h">Barbershop Services</div>
+  <div class="services-cards">
+    <div class="sc">
+      <div class="ico">💈</div>
+      <h3>Men's Cut</h3>
+      <p>All styles. Classic fades, tapers, and everything in between. Fresh every time.</p>
+      <div class="price">Starting at $15</div>
+    </div>
+    <div class="sc">
+      <div class="ico">👦</div>
+      <h3>Kids' Cut</h3>
+      <p>Clean, quick cuts for the young ones. We make it easy and comfortable for kids.</p>
+      <div class="price">Starting at $12</div>
+    </div>
+    <div class="sc">
+      <div class="ico">🧔</div>
+      <h3>Beard Lineup</h3>
+      <p>Sharp lines, trimmed tight. We sculpt your beard to match your style.</p>
+      <div class="price">Starting at $10</div>
+    </div>
+    <div class="sc">
+      <div class="ico">✨</div>
+      <h3>Cut + Beard</h3>
+      <p>The complete package — full haircut with a full beard trim and shape.</p>
+      <div class="price">Starting at $22</div>
+    </div>
+    <div class="sc">
+      <div class="ico">🎓</div>
+      <h3>WKU/Student Discount</h3>
+      <p>Student ID gets you a discount. We support education — show your card.</p>
+      <div class="price">Ask at the counter</div>
+    </div>
+    <div class="sc">
+      <div class="ico">👴</div>
+      <h3>Senior Discount</h3>
+      <p>We appreciate our elders. Senior citizens get special discounted rates every day.</p>
+      <div class="price">Ask at the counter</div>
+    </div>
+  </div>
+</section>
+
+<section class="hours-section" id="hours">
+  <div class="hours-inner">
+    <div class="section-label">Open 6 Days</div>
+    <div class="section-h">Hours of Operation</div>
+    <div class="hours-grid">
+      <div class="hours-row"><span class="day">Monday</span><span class="time">9:00 AM – 5:00 PM</span></div>
+      <div class="hours-row"><span class="day">Tuesday</span><span class="time">9:00 AM – 5:00 PM</span></div>
+      <div class="hours-row"><span class="day">Wednesday</span><span class="time">9:00 AM – 5:00 PM</span></div>
+      <div class="hours-row"><span class="day">Thursday</span><span class="time">9:00 AM – 5:00 PM</span></div>
+      <div class="hours-row"><span class="day">Friday</span><span class="time">9:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span class="day">Saturday</span><span class="time">9:00 AM – 6:00 PM</span></div>
+    </div>
+    <p style="color:var(--gray); font-size:0.9rem; margin-top:1.5rem; text-align:center;">Walk-ins welcome any time during business hours.</p>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-text">
+    <h2>4KCutz — Grenada's <span style="color:var(--red)">Barber Shop</span></h2>
+    <p>Located in Grenada, Mississippi, 4KCutz is the spot for precision cuts and real barbershop vibes. Whether you want a clean fade, a sharp lineup, or a full beard trim — we deliver consistent quality every time.</p>
+    <p>We keep the prices fair, the atmosphere welcoming, and the cuts sharp. Students and seniors always get a discount because we believe in taking care of our community.</p>
+    <p>No complicated booking apps — just call us or walk-in. We'll take good care of you.</p>
+  </div>
+  <div class="badges">
+    <div class="badge-item"><div class="bi">📍</div><div><h4>72 Sunset Loop</h4><p>Grenada, MS</p></div></div>
+    <div class="badge-item"><div class="bi">📞</div><div><h4>(270) 303-7412</h4><p>Call or walk in</p></div></div>
+    <div class="badge-item"><div class="bi">🤝</div><div><h4>Walk-Ins Welcome</h4><p>No appointment needed</p></div></div>
+    <div class="badge-item"><div class="bi">🎓</div><div><h4>Student &amp; Senior</h4><p>Discounts available</p></div></div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Get Your Cut Today</h2>
+  <p>Call us or just come in — walk-ins always welcome.</p>
+  <a class="ph" href="tel:2703037412">(270) 303-7412</a>
+  <a href="tel:2703037412" style="background:#000;color:var(--gold);padding:1rem 2.5rem;border-radius:4px;text-decoration:none;font-weight:800;font-size:1rem;letter-spacing:2px;text-transform:uppercase;display:inline-block;">Call Now</a>
+</section>
+
+<footer>
+  <strong>4KCutz Barbershop</strong> &nbsp;|&nbsp; 72 Sunset Loop, Grenada, MS &nbsp;|&nbsp; <a href="tel:2703037412">(270) 303-7412</a><br/>
+  <small>© 2025 4KCutz Barbershop. All rights reserved.</small>
+</footer>
+
+</body>
+</html>
