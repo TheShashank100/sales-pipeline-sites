@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moon Mullins' Barber Shop – Corinth, MS – Est. 1946</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1c2b40;
+      --deep-navy: #111b28;
+      --cream: #f8f3e8;
+      --warm: #ede5d0;
+      --red: #9b2335;
+      --gold: #c9a84c;
+      --tan: #b89a6a;
+      --dark-text: #2a1f0e;
+    }
+    body { font-family: Georgia, 'Times New Roman', serif; background: var(--cream); color: var(--dark-text); }
+
+    /* HEADER */
+    header { background: var(--deep-navy); padding: 0; border-bottom: 4px solid var(--gold); }
+    .header-top { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+    .logo-area { text-align: center; flex: 1; }
+    .est { font-family: 'Segoe UI', sans-serif; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--tan); margin-bottom: 0.3rem; }
+    .shop-name { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(--cream); letter-spacing: 2px; }
+    .shop-name span { color: var(--gold); }
+    .shop-sub { font-family: 'Segoe UI', sans-serif; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--tan); margin-top: 0.2rem; }
+    .nav-cta { background: var(--red); color: var(--cream); padding: 0.6rem 1.3rem; border-radius: 3px; text-decoration: none; font-family: 'Segoe UI', sans-serif; font-weight: 700; font-size: 0.85rem; white-space: nowrap; transition: background 0.2s; }
+    .nav-cta:hover { background: #7e1c2a; }
+    @media (max-width: 500px) { .header-top { flex-direction: column; gap: 1rem; } }
+
+    /* HERO */
+    .hero { background: var(--navy); color: var(--cream); padding: 4rem 2rem; text-align: center; position: relative; }
+    .pole-wrapper { display: flex; justify-content: center; gap: 40px; margin-bottom: 1.5rem; }
+    .pole { width: 18px; height: 80px; border-radius: 9px; overflow: hidden; }
+    .pole-stripe { height: 20px; }
+    .s-r { background: var(--red); }
+    .s-w { background: var(--cream); }
+    .s-b { background: #2a4b8d; }
+    .founded-badge { display: inline-block; border: 2px solid var(--gold); color: var(--gold); font-family: 'Segoe UI', sans-serif; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 20px; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.8rem; }
+    .hero h1 em { color: var(--gold); font-style: italic; }
+    .hero .byline { font-family: 'Segoe UI', sans-serif; font-size: 1.1rem; color: #a8b8c8; margin-bottom: 2rem; font-style: italic; }
+    .hero .address-line { font-family: 'Segoe UI', sans-serif; font-size: 0.9rem; color: var(--tan); letter-spacing: 1px; margin-bottom: 2rem; }
+    .btn-hero { background: var(--gold); color: var(--deep-navy); padding: 0.9rem 2.5rem; border-radius: 3px; text-decoration: none; font-family: 'Segoe UI', sans-serif; font-weight: 800; font-size: 0.95rem; letter-spacing: 1px; text-transform: uppercase; transition: all 0.2s; display: inline-block; }
+    .btn-hero:hover { background: var(--tan); }
+
+    /* HORIZONTAL RULE */
+    .ornament { text-align: center; padding: 1rem 0; color: var(--gold); font-size: 1.5rem; letter-spacing: 8px; background: var(--warm); }
+
+    /* STORY */
+    .story { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start; }
+    .story-text { flex: 1; min-width: 260px; }
+    .story-text h2 { font-size: 1.8rem; color: var(--navy); margin-bottom: 1rem; }
+    .story-text p { font-size: 1rem; line-height: 1.85; color: #444; margin-bottom: 1rem; font-family: 'Segoe UI', sans-serif; }
+    .story-aside { flex: 0 0 240px; }
+    .fact-box { background: var(--navy); color: var(--cream); padding: 2rem; border-radius: 6px; border-left: 4px solid var(--gold); }
+    .fact-box .year { font-size: 4rem; font-weight: 900; color: var(--gold); line-height: 1; }
+    .fact-box .year-label { font-family: 'Segoe UI', sans-serif; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--tan); margin-bottom: 1.5rem; }
+    .fact-box hr { border: none; border-top: 1px solid rgba(201,168,76,0.3); margin-bottom: 1.5rem; }
+    .fact-item { font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; color: #aab; margin-bottom: 0.8rem; line-height: 1.5; }
+    .fact-item strong { color: var(--cream); }
+
+    /* SERVICES */
+    .services { background: var(--warm); padding: 4rem 2rem; }
+    .services-inner { max-width: 900px; margin: 0 auto; }
+    .section-title { text-align: center; margin-bottom: 2.5rem; }
+    .section-title .rule { display: flex; align-items: center; gap: 1rem; justify-content: center; margin-bottom: 1rem; }
+    .section-title .rule hr { border: none; border-top: 1px solid var(--tan); width: 60px; }
+    .section-title .rule span { color: var(--gold); font-size: 1.2rem; }
+    .section-title h2 { font-size: 1.8rem; color: var(--navy); }
+    .menu { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 600px; margin: 0 auto; border: 2px solid var(--tan); border-radius: 6px; overflow: hidden; }
+    .menu-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; border-bottom: 1px solid var(--tan); background: var(--cream); transition: background 0.15s; }
+    .menu-item:nth-child(odd) { border-right: 1px solid var(--tan); }
+    .menu-item:hover { background: var(--warm); }
+    .menu-item .service { font-size: 0.95rem; font-weight: 700; color: var(--dark-text); }
+    .menu-item .service-note { font-size: 0.75rem; color: #888; font-family: 'Segoe UI', sans-serif; }
+    .menu-item .svc-price { font-family: 'Segoe UI', sans-serif; font-weight: 700; color: var(--red); font-size: 0.9rem; white-space: nowrap; }
+
+    /* WALK IN */
+    .walk-in { background: var(--red); color: var(--cream); padding: 2rem; text-align: center; }
+    .walk-in p { font-size: 1.1rem; letter-spacing: 1px; font-family: 'Segoe UI', sans-serif; }
+
+    /* CONTACT */
+    .contact { padding: 4rem 2rem; max-width: 700px; margin: 0 auto; text-align: center; }
+    .contact h2 { font-size: 1.8rem; color: var(--navy); margin-bottom: 2rem; }
+    .contact-blocks { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+    .cb { background: var(--navy); color: var(--cream); padding: 1.8rem 2rem; border-radius: 6px; flex: 1; min-width: 180px; }
+    .cb .cbi { font-size: 2rem; margin-bottom: 0.6rem; }
+    .cb h4 { font-family: 'Segoe UI', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--tan); margin-bottom: 0.4rem; }
+    .cb p, .cb a { font-family: 'Segoe UI', sans-serif; font-size: 0.9rem; color: #ccc; line-height: 1.6; text-decoration: none; }
+    .cb a { color: var(--gold); font-weight: 700; font-size: 1rem; }
+
+    /* FOOTER */
+    footer { background: var(--deep-navy); border-top: 4px solid var(--gold); color: var(--tan); text-align: center; padding: 2rem; font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; }
+    footer strong { color: var(--cream); }
+    footer .est-footer { color: var(--gold); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="logo-area">
+      <div class="est">Est. 1946 &nbsp;·&nbsp; Corinth, Mississippi</div>
+      <div class="shop-name">Moon Mullins' <span>Barber Shop</span></div>
+      <div class="shop-sub">Corinth's Oldest Barbershop</div>
+    </div>
+    <a class="nav-cta" href="#contact">Find Us</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="pole-wrapper">
+    <div class="pole"><div class="pole-stripe s-r"></div><div class="pole-stripe s-w"></div><div class="pole-stripe s-b"></div><div class="pole-stripe s-w"></div></div>
+    <div class="pole"><div class="pole-stripe s-b"></div><div class="pole-stripe s-w"></div><div class="pole-stripe s-r"></div><div class="pole-stripe s-w"></div></div>
+  </div>
+  <div class="founded-badge">Serving Corinth Since 1946</div>
+  <h1>Where Every Cut Tells<br><em>A Story.</em></h1>
+  <p class="byline">Walk-ins only — because a real barbershop doesn't need an app.</p>
+  <p class="address-line">📍 408 Franklin Street, Corinth, MS 38834</p>
+  <a class="btn-hero" href="#contact">Directions &amp; Hours</a>
+</section>
+
+<div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+<section class="story">
+  <div class="story-text">
+    <h2>A Corinth Institution</h2>
+    <p>Moon Mullins' Barber Shop has been a fixture on Franklin Street since 1946. Through decades of change in Corinth, one thing has remained constant — men and boys have come here for a clean cut, an honest price, and good conversation.</p>
+    <p>This is a no-frills, no-appointment, walk-right-in barbershop. The kind your grandfather went to. The kind that's almost impossible to find anymore. We've kept the craft alive because that's what Corinth deserves.</p>
+    <p>No booking app, no wait list, no nonsense. Just sit down and we'll take care of you like we always have.</p>
+  </div>
+  <div class="story-aside">
+    <div class="fact-box">
+      <div class="year">1946</div>
+      <div class="year-label">Year Established</div>
+      <hr>
+      <div class="fact-item"><strong>📍 Location</strong><br>408 Franklin Street<br>Corinth, MS 38834</div>
+      <div class="fact-item"><strong>🚪 Walk-Ins Only</strong><br>No appointment needed — ever.</div>
+      <div class="fact-item"><strong>💈 Classic Cuts</strong><br>Traditional barbershop services done right.</div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-title">
+      <div class="rule"><hr><span>✂</span><hr></div>
+      <h2>Services &amp; Pricing</h2>
+    </div>
+    <div class="menu">
+      <div class="menu-item"><div><div class="service">Men's Haircut</div><div class="service-note">Any style</div></div><div class="svc-price">$12–$18</div></div>
+      <div class="menu-item"><div><div class="service">Boys' Cut</div><div class="service-note">Under 12</div></div><div class="svc-price">$10–$14</div></div>
+      <div class="menu-item"><div><div class="service">Flat Top</div><div class="service-note">Classic precision</div></div><div class="svc-price">$15–$20</div></div>
+      <div class="menu-item"><div><div class="service">Beard Trim</div><div class="service-note">Shape &amp; clean</div></div><div class="svc-price">$8–$12</div></div>
+      <div class="menu-item"><div><div class="service">Senior Cut</div><div class="service-note">Special rates</div></div><div class="svc-price">Ask us</div></div>
+      <div class="menu-item"><div><div class="service">Hot Towel Shave</div><div class="service-note">The classic</div></div><div class="svc-price">$15–$20</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="walk-in">
+  <p>✅ &nbsp; <strong>Walk-Ins Only</strong> — No Appointments Needed &nbsp; | &nbsp; Come In Anytime During Business Hours</p>
+</div>
+
+<section class="contact" id="contact">
+  <h2>Come See Us</h2>
+  <div class="contact-blocks">
+    <div class="cb">
+      <div class="cbi">📍</div>
+      <h4>Address</h4>
+      <p>408 Franklin Street<br>Corinth, MS 38834</p>
+    </div>
+    <div class="cb">
+      <div class="cbi">🕐</div>
+      <h4>Hours</h4>
+      <p>Monday–Saturday<br>Typical barber shop hours<br>(Call ahead to confirm)</p>
+    </div>
+    <div class="cb">
+      <div class="cbi">💈</div>
+      <h4>Walk-Ins Only</h4>
+      <p>No appointment needed.<br>Just come on in.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Moon Mullins' Barber Shop</strong> &nbsp;|&nbsp; 408 Franklin Street, Corinth, MS 38834 &nbsp;|&nbsp; <span class="est-footer">Est. 1946</span><br/>
+  <small>© 2025 Moon Mullins' Barber Shop. Corinth's oldest barbershop — serving the community for over 75 years.</small>
+</footer>
+
+</body>
+</html>
