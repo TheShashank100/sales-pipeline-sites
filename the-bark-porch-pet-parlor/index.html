@@ -4,3 +4,203 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Bark Porch Pet Parlor – Talladega, AL</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #2a9d8f;
+      --dark-teal: #1a6b61;
+      --orange: #e76f51;
+      --sand: #f4a261;
+      --cream: #fefae0;
+      --warm-white: #fff9f0;
+      --dark: #264653;
+      --light: #e9f5f3;
+    }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--warm-white); color: var(--dark); }
+
+    /* NAV */
+    nav { background: var(--dark); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { display: flex; align-items: center; gap: 0.7rem; }
+    .nav-logo .emoji { font-size: 1.5rem; }
+    .nav-logo .nl { }
+    .nav-logo .nl .n1 { font-size: 1.1rem; font-weight: 800; color: var(--cream); }
+    .nav-logo .nl .n2 { font-size: 0.7rem; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; }
+    .nav-btn { background: var(--orange); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.2s; }
+    .nav-btn:hover { background: var(--sand); color: var(--dark); }
+
+    /* HERO */
+    .hero { background: var(--teal); color: white; padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: '🐾'; position: absolute; bottom: -20px; left: 5%; font-size: 8rem; opacity: 0.08; }
+    .hero::after { content: '🐾'; position: absolute; top: -20px; right: 5%; font-size: 8rem; opacity: 0.08; }
+    .hero-chip { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; padding: 0.3rem 1rem; border-radius: 20px; margin-bottom: 1.2rem; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1rem; }
+    .hero h1 span { color: var(--cream); }
+    .hero p { font-size: 1.15rem; color: rgba(255,255,255,0.9); max-width: 560px; margin: 0 auto 2rem; line-height: 1.6; }
+    .hero-badges { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+    .hb { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-o { background: var(--orange); color: white; padding: 0.9rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.2s; display: inline-block; }
+    .btn-o:hover { background: var(--sand); color: var(--dark); transform: translateY(-2px); }
+    .btn-wh { background: white; color: var(--teal); padding: 0.85rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.2s; display: inline-block; }
+    .btn-wh:hover { background: var(--cream); }
+
+    /* INFO STRIP */
+    .info-strip { background: var(--dark-teal); color: rgba(255,255,255,0.9); padding: 0.9rem 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; font-size: 0.9rem; }
+    .is-item { display: flex; align-items: center; gap: 0.4rem; }
+
+    /* ABOUT */
+    .about { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .about h2 { font-size: 2rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem; }
+    .about h2 span { color: var(--teal); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    @media (max-width: 600px) { .about-grid { grid-template-columns: 1fr; } }
+    .about p { color: #555; line-height: 1.75; margin-bottom: 0.8rem; }
+    .exp-box { background: var(--light); border: 2px solid var(--teal); border-radius: 10px; padding: 2rem; }
+    .exp-box .years { font-size: 3.5rem; font-weight: 900; color: var(--teal); line-height: 1; }
+    .exp-box .yl { color: #555; font-size: 0.85rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+    .exp-box .facts div { padding: 0.6rem 0; border-bottom: 1px solid rgba(42,157,143,0.2); display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: #444; }
+    .exp-box .facts div:last-child { border-bottom: none; }
+
+    /* SERVICES */
+    .services { background: var(--light); padding: 4rem 2rem; }
+    .s2-head { text-align: center; margin-bottom: 2.5rem; }
+    .s2-head h2 { font-size: 2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.4rem; }
+    .s2-head h2 span { color: var(--orange); }
+    .s2-head p { color: #777; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; max-width: 1000px; margin: 0 auto; }
+    .st { background: white; border-radius: 10px; padding: 1.8rem; transition: all 0.2s; border-bottom: 3px solid transparent; }
+    .st:hover { border-bottom-color: var(--teal); box-shadow: 0 6px 20px rgba(42,157,143,0.12); }
+    .st .ico { font-size: 2.2rem; margin-bottom: 0.7rem; }
+    .st h3 { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
+    .st p { font-size: 0.82rem; color: #777; line-height: 1.5; }
+    .st .pr { color: var(--orange); font-weight: 700; font-size: 0.85rem; margin-top: 0.6rem; }
+
+    /* CTA */
+    .cta { background: var(--orange); color: white; padding: 4rem 2rem; text-align: center; }
+    .cta h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.8rem; }
+    .cta p { font-size: 1.05rem; color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; }
+    .cta .phone-big { font-size: 2.3rem; font-weight: 900; color: var(--cream); text-decoration: none; display: block; margin-bottom: 1.5rem; }
+    .btn-teal { background: var(--teal); color: white; padding: 0.9rem 2.5rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: background 0.2s; display: inline-block; }
+    .btn-teal:hover { background: var(--dark-teal); }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.6); text-align: center; padding: 1.8rem; font-size: 0.85rem; }
+    footer strong { color: white; }
+    footer a { color: var(--teal); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <span class="emoji">🐾</span>
+    <div class="nl">
+      <div class="n1">The Bark Porch Pet Parlor</div>
+      <div class="n2">Talladega, Alabama</div>
+    </div>
+  </div>
+  <a class="nav-btn" href="tel:2563755598">📞 Book Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-chip">27 Years of Professional Pet Grooming</div>
+  <h1>Where Every Pet Leaves Looking <span>Tail-Wagging</span> Amazing</h1>
+  <p>Professional grooming for dogs and cats of all sizes. Experienced, gentle, and trusted by Talladega families for over two decades.</p>
+  <div class="hero-badges">
+    <span class="hb">🐕 All Dog Breeds</span>
+    <span class="hb">🐈 Cats Too!</span>
+    <span class="hb">⭐ 27 Years Experience</span>
+  </div>
+  <div class="hero-btns">
+    <a class="btn-o" href="tel:2563755598">📞 Book an Appointment</a>
+    <a class="btn-wh" href="#services">See Services</a>
+  </div>
+</section>
+
+<div class="info-strip">
+  <div class="is-item">📍 300 E St N, Suite G, Talladega, AL 35160</div>
+  <div class="is-item">📞 <a href="tel:2563755598" style="color:var(--sand); text-decoration:none; font-weight:700;">(256) 375-5598</a></div>
+  <div class="is-item">🕐 Tue–Fri: 8 AM–2 PM | Sat: 10 AM–2 PM</div>
+</div>
+
+<section class="about" id="about">
+  <h2>Talladega's <span>Trusted</span> Pet Groomer</h2>
+  <div class="about-grid">
+    <div>
+      <p>At The Bark Porch Pet Parlor, we believe every pet deserves to feel their best. With 27 years of experience grooming dogs and cats of all breeds and sizes, we bring a level of skill and care that only decades in the profession can build.</p>
+      <p>We're not just groomers — we're pet people. We know how to work with nervous animals, seniors with special needs, and puppies getting their first groom. We make the experience as stress-free and comfortable as possible for every pet we see.</p>
+      <p>Located right in Talladega on E Street, we're conveniently accessible and proud to be a local small business serving the community we love.</p>
+    </div>
+    <div class="exp-box">
+      <div class="years">27</div>
+      <div class="yl">Years in Business</div>
+      <div class="facts">
+        <div>🐕 Dogs of all breeds & sizes</div>
+        <div>🐈 Cat grooming available</div>
+        <div>🏠 Suite G, Talladega</div>
+        <div>📅 Appointments recommended</div>
+        <div>💛 Gentle with nervous pets</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="s2-head">
+    <h2>Our <span>Grooming</span> Services</h2>
+    <p>Professional care for every breed and coat type.</p>
+  </div>
+  <div class="services-grid">
+    <div class="st">
+      <div class="ico">🛁</div>
+      <h3>Bath, Brush & Dry</h3>
+      <p>Deep shampoo and condition, thorough blow-dry, and full brushout for a clean, fluffy coat.</p>
+      <div class="pr">By size/breed</div>
+    </div>
+    <div class="st">
+      <div class="ico">✂️</div>
+      <h3>Full Dog Groom</h3>
+      <p>Bath, haircut to your specification, nail trim, ear cleaning, and final touch-up.</p>
+      <div class="pr">By size/breed</div>
+    </div>
+    <div class="st">
+      <div class="ico">🐈</div>
+      <h3>Cat Grooming</h3>
+      <p>Yes, we groom cats! Bath, blow-dry, trim, and nail clip for felines of all sizes.</p>
+      <div class="pr">Call for pricing</div>
+    </div>
+    <div class="st">
+      <div class="ico">💅</div>
+      <h3>Nail Trim</h3>
+      <p>Quick nail clipping for dogs and cats. Add-on or standalone service.</p>
+      <div class="pr">Starting at $12</div>
+    </div>
+    <div class="st">
+      <div class="ico">👂</div>
+      <h3>Ear Cleaning</h3>
+      <p>Gentle removal of ear buildup. Especially important for floppy-eared and long-eared breeds.</p>
+      <div class="pr">Add-on service</div>
+    </div>
+    <div class="st">
+      <div class="ico">🌸</div>
+      <h3>Bandana & Bow</h3>
+      <p>Send your pup home in style with a fresh bandana or bow added to any groom.</p>
+      <div class="pr">Complimentary</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready to Book?</h2>
+  <p>Give us a call to schedule your pet's appointment. We look forward to meeting them!</p>
+  <a class="phone-big" href="tel:2563755598">(256) 375-5598</a>
+  <a class="btn-teal" href="tel:2563755598">Call to Schedule</a>
+</section>
+
+<footer>
+  <strong>The Bark Porch Pet Parlor</strong> &nbsp;|&nbsp; 300 E St N, Ste G, Talladega, AL 35160 &nbsp;|&nbsp; <a href="tel:2563755598">(256) 375-5598</a><br/>
+  <small>© 2025 The Bark Porch Pet Parlor. Professional dog & cat grooming in Talladega, Alabama.</small>
+</footer>
+
+</body>
+</html>
