@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petty Coat Grooming – Gadsden, AL</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --rose: #d4637a;
+      --pink: #f5b8c8;
+      --light-pink: #fce8ef;
+      --warm-brown: #7a4f3a;
+      --cream: #fffaf8;
+      --dark: #3a1f1f;
+      --sage: #7a9e7e;
+      --white: #ffffff;
+    }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--cream); color: var(--dark); }
+
+    /* NAV */
+    nav { background: var(--white); border-bottom: 2px solid var(--pink); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(212,99,122,0.1); }
+    .nav-brand { display: flex; align-items: center; gap: 0.8rem; }
+    .nav-brand .paw { font-size: 1.6rem; }
+    .brand-text .name { font-size: 1.2rem; font-weight: 800; color: var(--dark); }
+    .brand-text .tagline { font-size: 0.7rem; color: var(--rose); letter-spacing: 2px; text-transform: uppercase; }
+    .call-link { background: var(--rose); color: white; padding: 0.6rem 1.4rem; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.2s; }
+    .call-link:hover { background: var(--warm-brown); transform: scale(1.03); }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #fce8ef 0%, #f5b8c8 50%, #e8a0b4 100%); padding: 5rem 2rem 4rem; text-align: center; }
+    .paw-deco { font-size: 3rem; margin-bottom: 1.2rem; display: block; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; color: var(--dark); line-height: 1.1; margin-bottom: 0.8rem; }
+    .hero h1 em { color: var(--rose); font-style: normal; }
+    .hero .sub { font-size: 1.15rem; color: var(--warm-brown); margin-bottom: 0.5rem; }
+    .experience-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--rose); color: white; padding: 0.5rem 1.2rem; border-radius: 25px; font-weight: 700; font-size: 0.85rem; margin-bottom: 2rem; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-pink { background: var(--rose); color: white; padding: 0.9rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.2s; display: inline-block; }
+    .btn-pink:hover { background: var(--warm-brown); transform: translateY(-2px); }
+    .btn-outline-p { border: 2px solid var(--rose); color: var(--rose); padding: 0.85rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.2s; display: inline-block; background: white; }
+    .btn-outline-p:hover { background: var(--rose); color: white; }
+
+    /* TRUST BAR */
+    .trust-bar { background: var(--rose); color: white; padding: 0.8rem 2rem; text-align: center; font-size: 0.9rem; font-weight: 600; }
+
+    /* ABOUT */
+    .about { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: center; }
+    .about-text { flex: 1; min-width: 260px; }
+    .about-text h2 { font-size: 1.9rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem; }
+    .about-text h2 span { color: var(--rose); }
+    .about-text p { font-size: 1rem; color: #555; line-height: 1.75; margin-bottom: 0.8rem; }
+    .cert-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--sage); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-top: 0.5rem; }
+    .about-visual { flex: 0 0 260px; }
+    .info-card { background: var(--light-pink); border: 2px solid var(--pink); border-radius: 12px; padding: 1.8rem; }
+    .info-card h3 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem; text-align: center; }
+    .info-row2 { display: flex; align-items: flex-start; gap: 0.7rem; margin-bottom: 0.9rem; }
+    .info-row2 .ic { font-size: 1.2rem; flex-shrink: 0; }
+    .info-row2 p { font-size: 0.9rem; color: #555; line-height: 1.5; }
+    .info-row2 a { color: var(--rose); text-decoration: none; font-weight: 700; }
+
+    /* SERVICES */
+    .services { background: var(--light-pink); padding: 4rem 2rem; }
+    .services-inner { max-width: 1000px; margin: 0 auto; }
+    .s-head { text-align: center; margin-bottom: 2.5rem; }
+    .s-head h2 { font-size: 2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.5rem; }
+    .s-head h2 span { color: var(--rose); }
+    .s-head p { color: #777; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+    .service-tile { background: white; border-radius: 12px; padding: 1.8rem; text-align: center; box-shadow: 0 2px 16px rgba(212,99,122,0.1); transition: transform 0.2s, box-shadow 0.2s; }
+    .service-tile:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(212,99,122,0.18); }
+    .service-tile .ti { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .service-tile h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
+    .service-tile p { font-size: 0.85rem; color: #777; line-height: 1.5; }
+    .service-tile .tp { color: var(--rose); font-weight: 700; font-size: 0.88rem; margin-top: 0.7rem; }
+
+    /* WHY */
+    .why { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .why h2 { font-size: 1.9rem; font-weight: 800; text-align: center; margin-bottom: 2.5rem; }
+    .why-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+    .wl-item { background: white; border-radius: 12px; padding: 1.8rem; border-top: 4px solid var(--rose); }
+    .wl-item .wi { font-size: 2rem; margin-bottom: 0.8rem; }
+    .wl-item h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
+    .wl-item p { font-size: 0.85rem; color: #777; line-height: 1.5; }
+
+    /* CTA */
+    .cta { background: var(--rose); color: white; padding: 4rem 2rem; text-align: center; }
+    .cta h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.8rem; }
+    .cta p { font-size: 1.05rem; color: rgba(255,255,255,0.85); margin-bottom: 1rem; }
+    .cta .ph { font-size: 2.2rem; font-weight: 900; color: var(--dark); text-decoration: none; display: block; margin-bottom: 1.5rem; }
+    .btn-white { background: white; color: var(--rose); padding: 0.9rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: 800; font-size: 1rem; transition: all 0.2s; display: inline-block; }
+    .btn-white:hover { background: var(--cream); }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: #aaa; text-align: center; padding: 1.8rem; font-size: 0.85rem; }
+    footer strong { color: white; }
+    footer a { color: var(--rose); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <span class="paw">🐾</span>
+    <div class="brand-text">
+      <div class="name">Petty Coat Grooming</div>
+      <div class="tagline">Gadsden, Alabama</div>
+    </div>
+  </div>
+  <a class="call-link" href="tel:2564921616">📞 (256) 492-1616</a>
+</nav>
+
+<section class="hero">
+  <span class="paw-deco">🐶</span>
+  <h1>Your Pet Deserves <em>Expert Pampering</em></h1>
+  <p class="sub">Over 30 years of professional pet grooming in Gadsden, Alabama.</p>
+  <div class="experience-badge">⭐ Certified Master Groomer — 30+ Years Experience</div>
+  <div class="hero-btns">
+    <a class="btn-pink" href="tel:2564921616">📞 Book an Appointment</a>
+    <a class="btn-outline-p" href="#services">Our Services</a>
+  </div>
+</section>
+
+<div class="trust-bar">
+  🐾 &nbsp; Tuesday–Saturday, 9 AM – 5 PM &nbsp; | &nbsp; 1501 US Highway 278 E, Gadsden, AL 35903
+</div>
+
+<section class="about" id="about">
+  <div class="about-text">
+    <h2>Gadsden's Trusted <span>Pet Groomer</span></h2>
+    <p>With over 30 years of experience and a Certified Master Groomer on staff, Petty Coat Grooming has been giving Gadsden's pets the professional care they deserve for decades.</p>
+    <p>We treat every animal with patience, love, and skill. From routine baths and trims to full breed-standard cuts, your pet is in the most experienced hands in Alabama.</p>
+    <p>Small enough to give your pet individual attention. Experienced enough to handle any breed, size, or temperament with confidence and care.</p>
+    <span class="cert-badge">✅ Certified Master Groomer</span>
+  </div>
+  <div class="about-visual">
+    <div class="info-card">
+      <h3>📋 Contact &amp; Hours</h3>
+      <div class="info-row2"><span class="ic">📍</span><p>1501 US Highway 278 E<br>Gadsden, AL 35903</p></div>
+      <div class="info-row2"><span class="ic">📞</span><p><a href="tel:2564921616">(256) 492-1616</a></p></div>
+      <div class="info-row2"><span class="ic">🕐</span><p>Tue–Sat: 9:00 AM – 5:00 PM<br>Mon &amp; Sun: Closed</p></div>
+      <div class="info-row2"><span class="ic">🐾</span><p>All breeds and sizes welcome</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="s-head">
+      <h2>Our <span>Grooming</span> Services</h2>
+      <p>Full-service grooming for dogs of all breeds and sizes.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-tile">
+        <div class="ti">🛁</div>
+        <h3>Bath &amp; Brush</h3>
+        <p>Shampoo, conditioner, blow-dry, and a full brushout for that extra fluff and shine.</p>
+        <div class="tp">Pricing by breed/size</div>
+      </div>
+      <div class="service-tile">
+        <div class="ti">✂️</div>
+        <h3>Full Groom</h3>
+        <p>Complete bath, haircut, nail trim, ear cleaning, and finishing touches — the full treatment.</p>
+        <div class="tp">Pricing by breed/size</div>
+      </div>
+      <div class="service-tile">
+        <div class="ti">💅</div>
+        <h3>Nail Trim</h3>
+        <p>Quick and stress-free nail clipping. Keep your pet comfortable and your floors scratch-free.</p>
+        <div class="tp">Starting at $12</div>
+      </div>
+      <div class="service-tile">
+        <div class="ti">👂</div>
+        <h3>Ear Cleaning</h3>
+        <p>Gentle ear cleaning to prevent buildup and infections. Important for floppy-eared breeds.</p>
+        <div class="tp">Add-on service</div>
+      </div>
+      <div class="service-tile">
+        <div class="ti">🌟</div>
+        <h3>Breed-Standard Cuts</h3>
+        <p>Show-quality styling for any breed. With a Certified Master Groomer, breed standards are our specialty.</p>
+        <div class="tp">Call for pricing</div>
+      </div>
+      <div class="service-tile">
+        <div class="ti">🐾</div>
+        <h3>De-Shed Treatment</h3>
+        <p>Special bath and brushout to dramatically reduce shedding. Your furniture will thank you.</p>
+        <div class="tp">Pricing by size</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <h2>🐾 Why Petty Coat Grooming?</h2>
+  <div class="why-list">
+    <div class="wl-item">
+      <div class="wi">🎓</div>
+      <h3>Certified Master Groomer</h3>
+      <p>Not every groomer is certified — ours is a Certified Master Groomer with over 30 years of hands-on experience.</p>
+    </div>
+    <div class="wl-item">
+      <div class="wi">💛</div>
+      <h3>Patience &amp; Compassion</h3>
+      <p>We work with anxious, nervous, and difficult dogs with patience and care. Every pet is treated gently.</p>
+    </div>
+    <div class="wl-item">
+      <div class="wi">📍</div>
+      <h3>Local Gadsden Business</h3>
+      <p>We're right here in Gadsden on Highway 278 E — convenient for our community, not a big box chain.</p>
+    </div>
+    <div class="wl-item">
+      <div class="wi">⭐</div>
+      <h3>Decades of Trust</h3>
+      <p>30+ years means generations of Gadsden families have trusted us with their beloved pets. That reputation means everything.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Book Your Pet's Appointment</h2>
+  <p>Call us today — we'd love to meet your furry family member.</p>
+  <a class="ph" href="tel:2564921616">(256) 492-1616</a>
+  <a class="btn-white" href="tel:2564921616">Schedule Now</a>
+</section>
+
+<footer>
+  <strong>Petty Coat Grooming</strong> &nbsp;|&nbsp; 1501 US Highway 278 E, Gadsden, AL 35903 &nbsp;|&nbsp; <a href="tel:2564921616">(256) 492-1616</a><br/>
+  <small>© 2025 Petty Coat Grooming. Certified Master Groomer serving Gadsden, Alabama for 30+ years.</small>
+</footer>
+
+</body>
+</html>
