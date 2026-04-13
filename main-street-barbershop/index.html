@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main Street Barbershop – Greenwood, MS</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --forest: #2d4a22;
+      --dark-forest: #1a2e14;
+      --cream: #f5f0e8;
+      --warm-white: #faf8f4;
+      --tan: #c8b89a;
+      --red: #c0392b;
+      --gold: #b8963e;
+    }
+    body { font-family: Georgia, 'Times New Roman', serif; background: var(--warm-white); color: var(--dark-forest); }
+
+    /* NAV */
+    nav { background: var(--dark-forest); display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--gold); }
+    .nav-logo { display: flex; flex-direction: column; }
+    .nav-logo .name { color: var(--cream); font-size: 1.3rem; font-weight: 700; letter-spacing: 1px; }
+    .nav-logo .sub { color: var(--tan); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; font-family: 'Segoe UI', sans-serif; }
+    .nav-phone { background: var(--red); color: white; padding: 0.6rem 1.3rem; border-radius: 4px; text-decoration: none; font-family: 'Segoe UI', sans-serif; font-weight: 700; font-size: 0.9rem; transition: background 0.2s; }
+    .nav-phone:hover { background: #a93226; }
+
+    /* HERO */
+    .hero { background: var(--forest); padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden; }
+    .hero::after { content: '✂'; position: absolute; top: 1rem; right: 2rem; font-size: 8rem; opacity: 0.05; color: var(--cream); }
+    .stripe { display: flex; gap: 6px; justify-content: center; margin-bottom: 2rem; }
+    .stripe span { width: 12px; height: 60px; border-radius: 2px; }
+    .stripe .r { background: var(--red); }
+    .stripe .w { background: var(--cream); }
+    .stripe .b { background: #2a4b8d; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); color: var(--cream); line-height: 1.1; margin-bottom: 1rem; font-style: italic; }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero .tagline { font-family: 'Segoe UI', sans-serif; font-size: 1.1rem; color: var(--tan); margin-bottom: 2rem; letter-spacing: 1px; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-cream { background: var(--cream); color: var(--dark-forest); padding: 0.9rem 2rem; border-radius: 4px; text-decoration: none; font-family: 'Segoe UI', sans-serif; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; }
+    .btn-cream:hover { background: var(--gold); color: white; }
+    .btn-outline-c { border: 2px solid var(--tan); color: var(--cream); padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none; font-family: 'Segoe UI', sans-serif; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; }
+    .btn-outline-c:hover { border-color: var(--cream); }
+
+    /* HOURS BANNER */
+    .hours-banner { background: var(--gold); color: var(--dark-forest); padding: 1rem 2rem; text-align: center; font-family: 'Segoe UI', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 1px; }
+
+    /* ABOUT */
+    .about { display: flex; flex-wrap: wrap; max-width: 1100px; margin: 4rem auto; padding: 0 2rem; gap: 3rem; align-items: center; }
+    .about-text { flex: 1; min-width: 260px; }
+    .about-text h2 { font-size: 2rem; color: var(--forest); margin-bottom: 1rem; }
+    .about-text h2 em { color: var(--gold); font-style: italic; }
+    .about-text p { font-size: 1rem; color: #444; line-height: 1.8; margin-bottom: 1rem; font-family: 'Segoe UI', sans-serif; }
+    .about-visual { flex: 0 0 300px; background: var(--forest); border-radius: 8px; padding: 2.5rem; text-align: center; }
+    .about-visual .big-icon { font-size: 5rem; margin-bottom: 1rem; }
+    .about-visual h3 { font-size: 1.1rem; color: var(--cream); margin-bottom: 0.5rem; }
+    .about-visual p { font-size: 0.9rem; color: var(--tan); font-family: 'Segoe UI', sans-serif; line-height: 1.5; }
+
+    /* SERVICES */
+    .services { background: var(--cream); padding: 4rem 2rem; }
+    .services-inner { max-width: 900px; margin: 0 auto; }
+    .sec-title { text-align: center; margin-bottom: 2.5rem; }
+    .sec-title h2 { font-size: 2rem; color: var(--dark-forest); margin-bottom: 0.5rem; }
+    .sec-title .sub { font-family: 'Segoe UI', sans-serif; color: #777; font-size: 0.95rem; letter-spacing: 1px; }
+    .cuts-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .cut-item { background: var(--warm-white); border: 2px solid var(--tan); border-radius: 6px; padding: 1.5rem; text-align: center; transition: border-color 0.2s; }
+    .cut-item:hover { border-color: var(--forest); }
+    .cut-item .cut-icon { font-size: 2rem; margin-bottom: 0.6rem; }
+    .cut-item h3 { font-size: 1rem; color: var(--dark-forest); margin-bottom: 0.3rem; }
+    .cut-item p { font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; color: #666; }
+    .cut-item .price { font-family: 'Segoe UI', sans-serif; color: var(--red); font-weight: 700; font-size: 0.9rem; margin-top: 0.5rem; }
+
+    /* WHY */
+    .why { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .why-card { border-top: 4px solid var(--forest); padding: 1.5rem; background: var(--warm-white); }
+    .why-card .icon { font-size: 2rem; margin-bottom: 0.7rem; }
+    .why-card h3 { font-size: 1rem; color: var(--dark-forest); margin-bottom: 0.4rem; }
+    .why-card p { font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; color: #666; line-height: 1.6; }
+
+    /* BOOK CTA */
+    .cta { background: var(--dark-forest); color: var(--cream); padding: 4rem 2rem; text-align: center; }
+    .cta h2 { font-size: 2rem; margin-bottom: 0.8rem; }
+    .cta p { font-family: 'Segoe UI', sans-serif; color: var(--tan); font-size: 1.05rem; margin-bottom: 1rem; }
+    .cta .walk-in { display: inline-block; background: rgba(200,184,154,0.15); border: 1px solid var(--tan); color: var(--tan); font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; padding: 0.3rem 1rem; border-radius: 20px; margin-bottom: 1.5rem; }
+    .cta .cta-phone { font-size: 2.5rem; color: var(--gold); text-decoration: none; display: block; margin-bottom: 1.5rem; font-weight: 700; }
+
+    /* FOOTER */
+    footer { background: var(--dark-forest); border-top: 3px solid var(--gold); color: var(--tan); text-align: center; padding: 1.8rem; font-family: 'Segoe UI', sans-serif; font-size: 0.88rem; }
+    footer strong { color: var(--cream); }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <span class="name">Main Street Barbershop</span>
+    <span class="sub">Greenwood, Mississippi</span>
+  </div>
+  <a class="nav-phone" href="tel:6625506402">📞 (662) 550-6402</a>
+</nav>
+
+<section class="hero">
+  <div class="stripe">
+    <span class="r"></span><span class="w"></span><span class="b"></span><span class="w"></span><span class="r"></span>
+  </div>
+  <h1>A Classic Cut,<br><em>Every Time.</em></h1>
+  <p class="tagline">Greenwood's neighborhood barbershop — where every customer leaves looking sharp</p>
+  <div class="hero-btns">
+    <a class="btn-cream" href="tel:6625506402">📞 Call to Book</a>
+    <a class="btn-outline-c" href="#services">View Services</a>
+  </div>
+</section>
+
+<div class="hours-banner">
+  ⏰ &nbsp; Sun: 8 AM–3 PM &nbsp;|&nbsp; Mon–Sat: 8 AM–7 PM &nbsp; | &nbsp; Walk-Ins Welcome
+</div>
+
+<section style="padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; display:flex; flex-wrap:wrap; gap:3rem; align-items:center;">
+  <div style="flex:1; min-width:260px;">
+    <h2 style="font-size:2rem; color: var(--forest); margin-bottom:1rem;">Greenwood's Favorite <em style="color:var(--gold); font-style:italic;">Barber Chair</em></h2>
+    <p style="font-family:'Segoe UI',sans-serif; font-size:1rem; color:#444; line-height:1.8; margin-bottom:1rem;">
+      At Main Street Barbershop, we keep it simple: great cuts, great conversations, and an atmosphere where you feel at home the moment you walk in. We've been serving Greenwood and the surrounding Delta community with honest barbershop tradition.
+    </p>
+    <p style="font-family:'Segoe UI',sans-serif; font-size:1rem; color:#444; line-height:1.8;">
+      Whether you're a regular or stepping in for the first time, you'll get the same quality care every visit. No gimmicks — just skilled hands and a hot towel finish.
+    </p>
+  </div>
+  <div style="flex:0 0 280px; background:var(--forest); border-radius:8px; padding:2.5rem; text-align:center;">
+    <div style="font-size:5rem; margin-bottom:1rem;">✂️</div>
+    <h3 style="font-size:1.1rem; color:var(--cream); margin-bottom:0.5rem;">310 Main St</h3>
+    <p style="font-size:0.9rem; color:var(--tan); font-family:'Segoe UI',sans-serif; line-height:1.6;">Greenwood, MS 38930<br><br>
+      <a href="tel:6625506402" style="color:var(--gold); font-weight:700; font-size:1.1rem; text-decoration:none;">(662) 550-6402</a>
+    </p>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="sec-title">
+      <h2>Our Cuts &amp; Services</h2>
+      <p class="sub">Quality barbering for men and boys of all ages</p>
+    </div>
+    <div class="cuts-list">
+      <div class="cut-item">
+        <div class="cut-icon">💈</div>
+        <h3>Men's Haircut</h3>
+        <p>Classic or modern styles. Scissor or clipper — your call.</p>
+        <div class="price">Starting at $15</div>
+      </div>
+      <div class="cut-item">
+        <div class="cut-icon">👦</div>
+        <h3>Boys' Cut</h3>
+        <p>Clean, neat cuts for young gentlemen of all ages.</p>
+        <div class="price">Starting at $12</div>
+      </div>
+      <div class="cut-item">
+        <div class="cut-icon">🪒</div>
+        <h3>Straight Razor Shave</h3>
+        <p>The classic hot-towel straight razor shave experience.</p>
+        <div class="price">Starting at $20</div>
+      </div>
+      <div class="cut-item">
+        <div class="cut-icon">🧔</div>
+        <h3>Beard Trim &amp; Shape</h3>
+        <p>Clean lines, shape-up, and a finished look that speaks for itself.</p>
+        <div class="price">Starting at $10</div>
+      </div>
+      <div class="cut-item">
+        <div class="cut-icon">✨</div>
+        <h3>Cut + Beard Combo</h3>
+        <p>Full haircut plus beard trim — the complete package.</p>
+        <div class="price">Starting at $22</div>
+      </div>
+      <div class="cut-item">
+        <div class="cut-icon">🎓</div>
+        <h3>Senior Cut</h3>
+        <p>Discounted cuts for our senior community — respect earned.</p>
+        <div class="price">Ask about senior pricing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="about">
+  <div class="sec-title" style="text-align:center; margin-bottom:2.5rem;">
+    <h2>Why Main Street?</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="icon">📍</div>
+      <h3>Community Roots</h3>
+      <p>We're right on Main Street because we believe in Greenwood. Local businesses keep communities alive.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">🕐</div>
+      <h3>Open 7 Days a Week</h3>
+      <p>Even Sundays — because life doesn't stop on weekends, and neither does the need for a sharp look.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">🤝</div>
+      <h3>Walk-Ins Welcome</h3>
+      <p>No booking app required. Just walk in and settle into the chair — we'll take care of the rest.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">💈</div>
+      <h3>True Barbershop Craft</h3>
+      <p>We learned from the best and keep the old-school skills sharp — straight razors, hot towels, with care.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Get Your Cut Today</h2>
+  <span class="walk-in">✅ Walk-Ins Welcome Every Day</span>
+  <p>Give us a call or just come in — we'll get you looking right.</p>
+  <a class="cta-phone" href="tel:6625506402">(662) 550-6402</a>
+  <a href="tel:6625506402" style="background:var(--gold); color:var(--dark-forest); padding:0.9rem 2.5rem; border-radius:4px; text-decoration:none; font-family:'Segoe UI',sans-serif; font-weight:700; font-size:1rem;">Call Now</a>
+</section>
+
+<footer>
+  <strong>Main Street Barbershop</strong> &nbsp;|&nbsp; 310 Main St, Greenwood, MS 38930 &nbsp;|&nbsp; <a href="tel:6625506402">(662) 550-6402</a><br/>
+  <small>© 2025 Main Street Barbershop. All rights reserved.</small>
+</footer>
+
+</body>
+</html>
