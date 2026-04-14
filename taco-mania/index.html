@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taco Mania – Huntsville, TX</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #c1121f;
+      --deep-red: #8b0000;
+      --yellow: #f9c74f;
+      --green: #2d6a4f;
+      --dark-green: #1b4332;
+      --cream: #fef9ef;
+      --warm: #fff3cd;
+      --dark: #1a0a00;
+      --text: #3d2b00;
+    }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--cream); color: var(--text); }
+
+    /* NAV */
+    nav { background: var(--deep-red); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--yellow); }
+    .brand3 { display: flex; align-items: center; gap: 0.7rem; }
+    .brand3 .emoji3 { font-size: 1.8rem; }
+    .brand3 .bt3 .bn3 { font-size: 1.3rem; font-weight: 900; color: var(--yellow); letter-spacing: 1px; }
+    .brand3 .bt3 .bl3 { font-size: 0.7rem; color: rgba(255,255,255,0.7); letter-spacing: 2px; text-transform: uppercase; }
+    nav a.nb3 { background: var(--yellow); color: var(--dark); padding: 0.6rem 1.4rem; border-radius: 25px; text-decoration: none; font-weight: 800; font-size: 0.9rem; transition: all 0.2s; }
+    nav a.nb3:hover { background: white; }
+
+    /* HERO */
+    .hero { background: linear-gradient(180deg, var(--deep-red) 0%, var(--red) 60%, #e63946 100%); color: white; padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
+    .hero::after { content: '🌮'; position: absolute; right: 2%; top: 10%; font-size: 8rem; opacity: 0.08; transform: rotate(20deg); }
+    .hero::before { content: '🌯'; position: absolute; left: 2%; bottom: 10%; font-size: 8rem; opacity: 0.08; transform: rotate(-15deg); }
+    .tacos-row { font-size: 2.5rem; margin-bottom: 1.5rem; letter-spacing: 4px; }
+    .hero h1 { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; color: var(--yellow); line-height: 0.95; letter-spacing: -2px; margin-bottom: 1rem; text-shadow: 3px 3px 0 rgba(0,0,0,0.3); }
+    .hero h2 { font-size: clamp(1rem, 3vw, 1.6rem); font-weight: 400; color: rgba(255,255,255,0.9); margin-bottom: 2rem; letter-spacing: 2px; text-transform: uppercase; }
+    .specialties { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+    .sp { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+    .hero-btns3 { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-y2 { background: var(--yellow); color: var(--dark); padding: 1rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: 800; font-size: 1rem; transition: all 0.2s; display: inline-block; }
+    .btn-y2:hover { background: white; transform: translateY(-2px); }
+    .btn-wh3 { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.4); color: white; padding: 0.95rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.2s; display: inline-block; }
+    .btn-wh3:hover { background: rgba(255,255,255,0.25); }
+
+    /* ADDRESS BANNER */
+    .addr-banner { background: var(--green); color: white; padding: 0.8rem 2rem; text-align: center; font-size: 0.9rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+    .ab-item { display: flex; align-items: center; gap: 0.4rem; }
+    .ab-item a { color: var(--yellow); text-decoration: none; font-weight: 700; }
+
+    /* MENU */
+    .menu-section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .ms-head { text-align: center; margin-bottom: 3rem; }
+    .ms-head .lbl2 { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--red); font-weight: 700; margin-bottom: 0.5rem; }
+    .ms-head h2 { font-size: 2.2rem; font-weight: 900; color: var(--dark); }
+    .ms-head h2 span { color: var(--red); }
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .mc { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.2s; }
+    .mc:hover { transform: translateY(-4px); }
+    .mc-header { background: var(--red); padding: 1.2rem 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
+    .mc-header .mi { font-size: 1.8rem; }
+    .mc-header h3 { font-size: 1.1rem; font-weight: 800; color: white; }
+    .mc-body { padding: 1.5rem; }
+    .mc-body p { font-size: 0.9rem; color: #555; line-height: 1.6; margin-bottom: 1rem; }
+    .mc-badge { background: var(--warm); color: var(--deep-red); font-size: 0.8rem; font-weight: 700; padding: 0.3rem 0.8rem; border-radius: 20px; display: inline-block; }
+    .signature { border: 2px solid var(--yellow); }
+    .signature .mc-header { background: var(--deep-red); }
+    .signature .mc-badge { background: var(--yellow); color: var(--dark); }
+
+    /* ABOUT */
+    .about-section { background: var(--green); color: white; padding: 4rem 2rem; }
+    .as-inner { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; }
+    .as-text { flex: 1; min-width: 260px; }
+    .as-text h2 { font-size: 2rem; font-weight: 900; color: var(--yellow); margin-bottom: 1rem; }
+    .as-text p { color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 0.8rem; }
+    .as-info { flex: 0 0 260px; }
+    .info-plate { background: var(--dark-green); border: 2px solid rgba(249,199,79,0.3); border-radius: 10px; padding: 1.8rem; }
+    .info-plate h3 { color: var(--yellow); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.2rem; }
+    .ip-row { display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 1rem; }
+    .ip-row .ic { font-size: 1.2rem; flex-shrink: 0; }
+    .ip-row p { font-size: 0.88rem; color: rgba(255,255,255,0.8); line-height: 1.5; }
+    .ip-row a { color: var(--yellow); text-decoration: none; font-weight: 700; font-size: 1rem; }
+
+    /* WHY */
+    .why3 { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .why3 h2 { font-size: 2rem; font-weight: 900; text-align: center; margin-bottom: 2.5rem; color: var(--dark); }
+    .why3 h2 span { color: var(--red); }
+    .why3-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .wg3 { background: white; border-radius: 10px; padding: 1.8rem; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border-bottom: 3px solid var(--yellow); }
+    .wg3 .wi3 { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .wg3 h3 { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
+    .wg3 p { font-size: 0.84rem; color: #666; line-height: 1.5; }
+
+    /* CTA */
+    .cta3 { background: var(--yellow); padding: 4rem 2rem; text-align: center; }
+    .cta3 h2 { font-size: 2rem; font-weight: 900; color: var(--dark); margin-bottom: 0.8rem; }
+    .cta3 p { color: rgba(0,0,0,0.65); font-size: 1.05rem; margin-bottom: 1rem; }
+    .cta3 .ph3 { font-size: 2.2rem; font-weight: 900; color: var(--deep-red); text-decoration: none; display: block; margin-bottom: 1.5rem; }
+    .btn-red { background: var(--red); color: white; padding: 1rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: 800; font-size: 1rem; display: inline-block; transition: background 0.2s; }
+    .btn-red:hover { background: var(--deep-red); }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.5); text-align: center; padding: 1.8rem; font-size: 0.85rem; }
+    footer strong { color: white; }
+    footer a { color: var(--yellow); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="brand3">
+    <span class="emoji3">🌮</span>
+    <div class="bt3">
+      <div class="bn3">TACO MANIA</div>
+      <div class="bl3">Huntsville, Texas</div>
+    </div>
+  </div>
+  <a class="nb3" href="tel:9366492663">📞 Order Now</a>
+</nav>
+
+<section class="hero">
+  <div class="tacos-row">🌮 🌯 🫔</div>
+  <h1>TACO MANIA</h1>
+  <h2>Huntsville, Texas &nbsp;·&nbsp; 1110 Ave M</h2>
+  <div class="specialties">
+    <span class="sp">🏆 Famous M.O.A.B. Burrito</span>
+    <span class="sp">🌮 Street Tacos</span>
+    <span class="sp">🫔 Tejas Quesadillas</span>
+    <span class="sp">🍽️ Outdoor Seating</span>
+  </div>
+  <div class="hero-btns3">
+    <a class="btn-y2" href="tel:9366492663">📞 Call to Order</a>
+    <a class="btn-wh3" href="#menu">See the Menu</a>
+  </div>
+</section>
+
+<div class="addr-banner">
+  <div class="ab-item">📍 1110 Ave M, Huntsville, TX</div>
+  <div class="ab-item">📞 <a href="tel:9366492663">(936) 649-2663</a></div>
+  <div class="ab-item">🍽️ Outdoor seating available</div>
+</div>
+
+<section class="menu-section" id="menu">
+  <div class="ms-head">
+    <div class="lbl2">What We Serve</div>
+    <h2>Our <span>Legendary</span> Menu</h2>
+  </div>
+  <div class="menu-grid">
+    <div class="mc signature">
+      <div class="mc-header"><span class="mi">🏆</span><h3>The M.O.A.B.</h3></div>
+      <div class="mc-body">
+        <p>The Mother Of All Burritos. This legendary overstuffed burrito is why people come from across Walker County. Loaded with your choice of protein, rice, beans, fresh toppings, and our signature sauce.</p>
+        <span class="mc-badge">⭐ Signature Item</span>
+      </div>
+    </div>
+    <div class="mc">
+      <div class="mc-header"><span class="mi">🌮</span><h3>Street Tacos</h3></div>
+      <div class="mc-body">
+        <p>Authentic street-style tacos on fresh corn or flour tortillas. Loaded with your choice of meat, cilantro, onion, salsa, and lime. Order a few — you'll want more.</p>
+        <span class="mc-badge">🌮 3 for a great price</span>
+      </div>
+    </div>
+    <div class="mc">
+      <div class="mc-header"><span class="mi">🫔</span><h3>Tejas Quesadillas</h3></div>
+      <div class="mc-body">
+        <p>Texas-style quesadillas with melted cheese, seasoned protein, and all the right toppings. Crispy on the outside, gooey on the inside — Texas done right.</p>
+        <span class="mc-badge">🫔 Texas Style</span>
+      </div>
+    </div>
+    <div class="mc">
+      <div class="mc-header"><span class="mi">🥗</span><h3>Taco Bowls</h3></div>
+      <div class="mc-body">
+        <p>All the flavors of your favorite taco in a hearty bowl over rice. Topped fresh and packed with protein. The perfect low-carb option.</p>
+        <span class="mc-badge">Great combo value</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="as-inner">
+    <div class="as-text">
+      <h2>Real Texas Flavor<br>Right Here in Huntsville</h2>
+      <p>Taco Mania is Huntsville's go-to spot for authentic, delicious Mexican-inspired street food. We're known throughout Walker County for our legendary M.O.A.B. burrito and our commitment to fresh ingredients and bold flavors.</p>
+      <p>Come eat with us at our outdoor seating area — the perfect spot for a quick lunch or a relaxed dinner. Everything is made with care and seasoned with love.</p>
+      <p>Call ahead to order, or just come on by. We keep it simple, we keep it fresh, and we keep it delicious.</p>
+    </div>
+    <div class="as-info">
+      <div class="info-plate">
+        <h3>Find Us</h3>
+        <div class="ip-row"><span class="ic">📍</span><p>1110 Ave M<br>Huntsville, TX 77340</p></div>
+        <div class="ip-row"><span class="ic">📞</span><p><a href="tel:9366492663">(936) 649-2663</a></p></div>
+        <div class="ip-row"><span class="ic">🍽️</span><p>Outdoor seating available<br>for dining in</p></div>
+        <div class="ip-row"><span class="ic">🕐</span><p>Call us for current hours</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why3">
+  <h2>Why <span>Taco Mania</span>?</h2>
+  <div class="why3-grid">
+    <div class="wg3"><div class="wi3">🏆</div><h3>The Legendary M.O.A.B.</h3><p>Our Mother Of All Burritos is one of a kind. Nowhere else in Huntsville can you find anything like it.</p></div>
+    <div class="wg3"><div class="wi3">🌶️</div><h3>Bold, Authentic Flavors</h3><p>Fresh ingredients, real seasoning, and recipes that bring genuine street-food flavor to your table.</p></div>
+    <div class="wg3"><div class="wi3">🌳</div><h3>Outdoor Seating</h3><p>Enjoy your meal al fresco at our outdoor seating area. Perfect Texas weather calls for Texas tacos outside.</p></div>
+    <div class="wg3"><div class="wi3">💛</div><h3>Community Favorite</h3><p>We're a beloved Huntsville staple. Families, students, and locals keep coming back — that says everything.</p></div>
+  </div>
+</section>
+
+<section class="cta3">
+  <h2>Hungry? Call Now!</h2>
+  <p>Call to order ahead or just come on by. We're ready to feed you.</p>
+  <a class="ph3" href="tel:9366492663">(936) 649-2663</a>
+  <a class="btn-red" href="tel:9366492663">Call to Order</a>
+</section>
+
+<footer>
+  <strong>Taco Mania</strong> &nbsp;|&nbsp; 1110 Ave M, Huntsville, TX &nbsp;|&nbsp; <a href="tel:9366492663">(936) 649-2663</a><br/>
+  <small>© 2025 Taco Mania. Huntsville's legendary street tacos, burritos, and quesadillas.</small>
+</footer>
+
+</body>
+</html>
