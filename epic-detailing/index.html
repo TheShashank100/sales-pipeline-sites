@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epic Detailing – Paragould, AR</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --midnight: #050a1f;
+      --navy8: #0a1628;
+      --electric: #1a6fff;
+      --bright: #4d9fff;
+      --silver: #c8d4e0;
+      --white8: #f0f5ff;
+      --dark8: #0d1117;
+      --gray8: #7a8899;
+    }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--white8); color: var(--navy8); }
+
+    /* NAV */
+    nav { background: var(--midnight); padding: 1.1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--electric); }
+    .logo8 { display: flex; flex-direction: column; }
+    .logo8 .l81 { font-size: 1.5rem; font-weight: 900; color: var(--white8); letter-spacing: -0.5px; }
+    .logo8 .l81 span { color: var(--electric); }
+    .logo8 .l82 { font-size: 0.65rem; color: var(--gray8); letter-spacing: 3px; text-transform: uppercase; }
+    nav a.nc8 { background: var(--electric); color: white; padding: 0.6rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: all 0.2s; }
+    nav a.nc8:hover { background: var(--bright); }
+
+    /* HERO */
+    .hero8 {
+      background: var(--midnight);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero8-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(26,111,255,0.2) 0%, transparent 55%), radial-gradient(ellipse at 80% 30%, rgba(77,159,255,0.1) 0%, transparent 50%); }
+    .hero8-content { position: relative; z-index: 2; padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; width: 100%; display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; }
+    .hero8-text { flex: 1; min-width: 280px; }
+    .hero8-lbl { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--electric); font-weight: 700; margin-bottom: 1.2rem; }
+    .hero8-text h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; color: var(--white8); line-height: 1; letter-spacing: -2px; margin-bottom: 1.2rem; }
+    .hero8-text h1 em { color: var(--electric); font-style: normal; }
+    .hero8-text p { font-size: 1.1rem; color: var(--silver); line-height: 1.7; margin-bottom: 2rem; max-width: 500px; }
+    .hero8-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-e8 { background: var(--electric); color: white; padding: 0.95rem 2.2rem; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; transition: all 0.2s; display: inline-block; }
+    .btn-e8:hover { background: var(--bright); transform: translateY(-2px); }
+    .btn-out8 { border: 1px solid rgba(255,255,255,0.25); color: var(--white8); padding: 0.9rem 2.2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s; display: inline-block; }
+    .btn-out8:hover { border-color: var(--electric); color: var(--electric); }
+    .hero8-card { flex: 0 0 300px; background: rgba(255,255,255,0.05); border: 1px solid rgba(26,111,255,0.25); border-radius: 8px; padding: 2rem; }
+    .hero8-card h3 { font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--electric); margin-bottom: 1.2rem; }
+    .hcr8 { display: flex; gap: 0.8rem; align-items: flex-start; margin-bottom: 1rem; }
+    .hcr8 .ic8 { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .hcr8 p { font-size: 0.88rem; color: var(--silver); line-height: 1.5; }
+    .hcr8 a { color: var(--electric); text-decoration: none; font-weight: 700; font-size: 1rem; }
+
+    /* SERVICES */
+    .services8 { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .s8-head { text-align: center; margin-bottom: 3rem; }
+    .s8-head .lbl8 { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--electric); font-weight: 700; margin-bottom: 0.5rem; }
+    .s8-head h2 { font-size: 2.2rem; font-weight: 800; color: var(--navy8); }
+    .services8-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .sc8 { background: var(--midnight); border: 1px solid rgba(26,111,255,0.15); border-radius: 8px; padding: 2rem; transition: all 0.2s; position: relative; overflow: hidden; }
+    .sc8::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--electric); transform: scaleX(0); transition: transform 0.3s; }
+    .sc8:hover::before { transform: scaleX(1); }
+    .sc8:hover { border-color: rgba(26,111,255,0.4); }
+    .sc8 .ico8 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .sc8 h3 { font-size: 1.1rem; font-weight: 700; color: var(--white8); margin-bottom: 0.5rem; }
+    .sc8 p { font-size: 0.88rem; color: var(--gray8); line-height: 1.6; }
+    .sc8 .pr8 { color: var(--electric); font-weight: 700; font-size: 0.9rem; margin-top: 0.8rem; }
+
+    /* VEHICLE TYPES */
+    .vehicles { background: var(--navy8); padding: 3rem 2rem; }
+    .veh-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .veh-inner h2 { font-size: 1.4rem; font-weight: 700; color: var(--white8); margin-bottom: 2rem; }
+    .veh-grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .vt { background: rgba(255,255,255,0.05); border: 1px solid rgba(26,111,255,0.2); border-radius: 8px; padding: 1.2rem 1.8rem; text-align: center; flex: 1; min-width: 130px; max-width: 160px; }
+    .vt .vti { font-size: 2rem; margin-bottom: 0.4rem; }
+    .vt p { font-size: 0.85rem; color: var(--silver); font-weight: 600; }
+
+    /* WHY */
+    .why8 { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .why8-head { text-align: center; margin-bottom: 2.5rem; }
+    .why8-head .lbl8 { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--electric); font-weight: 700; margin-bottom: 0.5rem; }
+    .why8-head h2 { font-size: 2rem; font-weight: 800; color: var(--navy8); }
+    .why8-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+    .w8c { background: white; border-radius: 8px; padding: 1.8rem; border-top: 3px solid var(--electric); box-shadow: 0 2px 12px rgba(10,22,40,0.08); }
+    .w8c .wi8 { font-size: 2rem; margin-bottom: 0.8rem; }
+    .w8c h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy8); margin-bottom: 0.4rem; }
+    .w8c p { font-size: 0.84rem; color: var(--gray8); line-height: 1.5; }
+
+    /* CTA */
+    .cta8 { background: linear-gradient(135deg, var(--midnight), var(--navy8)); color: white; padding: 4rem 2rem; text-align: center; }
+    .cta8 .lbl8 { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--electric); font-weight: 700; margin-bottom: 0.8rem; display: block; }
+    .cta8 h2 { font-size: 2rem; font-weight: 900; margin-bottom: 0.8rem; }
+    .cta8 p { color: var(--silver); font-size: 1.05rem; margin-bottom: 1rem; }
+    .cta8 .ph8 { font-size: 2.5rem; font-weight: 900; color: var(--electric); text-decoration: none; display: block; margin-bottom: 1.5rem; }
+    .btn-e8b { background: var(--electric); color: white; padding: 1rem 3rem; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; display: inline-block; transition: all 0.2s; }
+    .btn-e8b:hover { background: var(--bright); }
+
+    /* FOOTER */
+    footer { background: var(--dark8); border-top: 1px solid rgba(26,111,255,0.2); color: var(--gray8); text-align: center; padding: 1.8rem; font-size: 0.85rem; }
+    footer strong { color: var(--white8); }
+    footer a { color: var(--electric); text-decoration: none; }
+
+    @media (max-width: 700px) { .hero8 { min-height: auto; } .hero8-content { padding: 4rem 1.5rem; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo8">
+    <span class="l81"><span>Epic</span> Detailing</span>
+    <span class="l82">Paragould, Arkansas</span>
+  </div>
+  <a class="nc8" href="tel:8702157010">📞 Free Quote</a>
+</nav>
+
+<section class="hero8">
+  <div class="hero8-bg"></div>
+  <div class="hero8-content">
+    <div class="hero8-text">
+      <div class="hero8-lbl">Mobile Auto Detailing — Paragould, AR</div>
+      <h1><em>Epic</em> Results,<br>Right at Your<br>Door.</h1>
+      <p>Professional mobile auto detailing for cars, trucks, SUVs, and minivans in Paragould and surrounding Northeast Arkansas. We come to you — wherever you are.</p>
+      <div class="hero8-btns">
+        <a class="btn-e8" href="tel:8702157010">📞 Get a Free Quote</a>
+        <a class="btn-out8" href="#services">View Packages</a>
+      </div>
+    </div>
+    <div class="hero8-card">
+      <h3>Contact & Info</h3>
+      <div class="hcr8"><span class="ic8">📍</span><p>Paragould, AR &amp; surrounding<br>Greene County area</p></div>
+      <div class="hcr8"><span class="ic8">📞</span><p><a href="tel:8702157010">(870) 215-7010</a></p></div>
+      <div class="hcr8"><span class="ic8">🚗</span><p>Mobile service — we come<br>to your home or office</p></div>
+      <div class="hcr8"><span class="ic8">📅</span><p>Flexible scheduling<br>Call to book your appointment</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="services8" id="services">
+  <div class="s8-head">
+    <div class="lbl8">What We Offer</div>
+    <h2>Detailing Packages</h2>
+  </div>
+  <div class="services8-grid">
+    <div class="sc8">
+      <div class="ico8">💧</div>
+      <h3>Express Wash &amp; Shine</h3>
+      <p>Quick exterior hand wash, window clean, tire dressing, and interior vacuum. When you need a fast refresh.</p>
+      <div class="pr8">Starting at $40</div>
+    </div>
+    <div class="sc8">
+      <div class="ico8">🚗</div>
+      <h3>Full Exterior Detail</h3>
+      <p>Complete exterior wash, clay bar decontamination, polish, and wax. Restored shine from bumper to bumper.</p>
+      <div class="pr8">Starting at $85</div>
+    </div>
+    <div class="sc8">
+      <div class="ico8">🪑</div>
+      <h3>Full Interior Detail</h3>
+      <p>Deep interior clean — full vacuum, carpet and seat shampoo, dashboard wipe, leather conditioning, and odor treatment.</p>
+      <div class="pr8">Starting at $95</div>
+    </div>
+    <div class="sc8">
+      <div class="ico8">⭐</div>
+      <h3>Complete Detail Package</h3>
+      <p>Full interior plus full exterior — the complete treatment. Perfect for a total reset or pre-sale preparation.</p>
+      <div class="pr8">Starting at $160</div>
+    </div>
+    <div class="sc8">
+      <div class="ico8">🔵</div>
+      <h3>Ceramic Coating</h3>
+      <p>Long-lasting nano ceramic coating that bonds to your paint. Water beads off, UV protection, incredible shine for years.</p>
+      <div class="pr8">Call for pricing</div>
+    </div>
+    <div class="sc8">
+      <div class="ico8">🔬</div>
+      <h3>Paint Correction</h3>
+      <p>Machine polish to eliminate swirl marks, light scratches, and oxidation. Restore that brand-new-car paint look.</p>
+      <div class="pr8">Call for pricing</div>
+    </div>
+  </div>
+</section>
+
+<div class="vehicles">
+  <div class="veh-inner">
+    <h2>We Detail All Vehicle Types</h2>
+    <div class="veh-grid">
+      <div class="vt"><div class="vti">🚗</div><p>Cars</p></div>
+      <div class="vt"><div class="vti">🛻</div><p>Trucks</p></div>
+      <div class="vt"><div class="vti">🚙</div><p>SUVs</p></div>
+      <div class="vt"><div class="vti">🚐</div><p>Minivans</p></div>
+      <div class="vt"><div class="vti">🚌</div><p>Commercial</p></div>
+    </div>
+  </div>
+</div>
+
+<section class="why8" id="about">
+  <div class="why8-head">
+    <div class="lbl8">The Epic Difference</div>
+    <h2>Why Epic Detailing?</h2>
+  </div>
+  <div class="why8-grid">
+    <div class="w8c"><div class="wi8">🚗</div><h3>We Come to You</h3><p>No driving, no waiting. We bring the full detail shop to your driveway, office parking lot, or wherever is convenient.</p></div>
+    <div class="w8c"><div class="wi8">📍</div><h3>Paragould Local</h3><p>We're right here in Greene County. Supporting a local business means your money stays in the community.</p></div>
+    <div class="w8c"><div class="wi8">🏆</div><h3>Quality Products</h3><p>We use professional-grade shampoos, waxes, and coatings — not the cheap stuff you find at the gas station.</p></div>
+    <div class="w8c"><div class="wi8">📅</div><h3>Flexible Schedule</h3><p>Early morning, evenings, weekends — we work around your life. Just call and we'll find a time that works.</p></div>
+  </div>
+</section>
+
+<section class="cta8">
+  <span class="lbl8">Get Started Today</span>
+  <h2>Ready for an Epic Clean?</h2>
+  <p>Call now for your free quote — mobile service, no hassle, epic results.</p>
+  <a class="ph8" href="tel:8702157010">(870) 215-7010</a>
+  <a class="btn-e8b" href="tel:8702157010">Call for a Free Quote</a>
+</section>
+
+<footer>
+  <strong>Epic Detailing</strong> &nbsp;|&nbsp; Paragould, AR &nbsp;|&nbsp; <a href="tel:8702157010">(870) 215-7010</a><br/>
+  <small>© 2025 Epic Detailing. Mobile auto detailing in Paragould, Arkansas. Cars, trucks, SUVs, and minivans.</small>
+</footer>
+
+</body>
+</html>
