@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Maid of Natchitoches – Professional Cleaning, Natchitoches, LA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --burgundy: #6b1c1c;
+      --deep: #3d0c0c;
+      --gold6: #c9a84c;
+      --cream6: #f9f4ec;
+      --warm6: #f3e9d2;
+      --light6: #fdf7f0;
+      --gray6: #5c5044;
+      --dark6: #1a0a00;
+    }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--light6); color: var(--dark6); }
+
+    /* NAV */
+    nav { background: var(--deep); padding: 1.1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--gold6); }
+    .nb6 .n6 { font-size: 1.2rem; font-weight: 800; color: var(--cream6); }
+    .nb6 .s6 { font-size: 0.68rem; color: var(--gold6); letter-spacing: 3px; text-transform: uppercase; }
+    nav a.nc6 { background: var(--gold6); color: var(--deep); padding: 0.6rem 1.4rem; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 0.9rem; transition: all 0.2s; }
+    nav a.nc6:hover { background: var(--cream6); }
+
+    /* HERO */
+    .hero6 {
+      background: linear-gradient(160deg, var(--deep) 0%, var(--burgundy) 100%);
+      color: var(--cream6);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero6::before { content: '✨'; position: absolute; top: 15%; right: 8%; font-size: 6rem; opacity: 0.06; }
+    .hero6-ornament { color: var(--gold6); font-size: 1rem; letter-spacing: 8px; margin-bottom: 1.2rem; }
+    .hero6 h1 { font-family: Georgia, serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.8rem; }
+    .hero6 h1 em { color: var(--gold6); font-style: italic; }
+    .hero6 .city-tag { font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold6); margin-bottom: 1.5rem; font-weight: 600; }
+    .hero6 p { font-size: 1.1rem; color: rgba(249,244,236,0.85); max-width: 540px; margin: 0 auto 2rem; line-height: 1.7; }
+    .hero6-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-g6 { background: var(--gold6); color: var(--deep); padding: 0.9rem 2.2rem; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 1rem; transition: all 0.2s; display: inline-block; }
+    .btn-g6:hover { background: var(--cream6); transform: translateY(-2px); }
+    .btn-out6 { border: 2px solid rgba(201,168,76,0.5); color: var(--cream6); padding: 0.85rem 2.2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.2s; display: inline-block; }
+    .btn-out6:hover { border-color: var(--gold6); color: var(--gold6); }
+
+    /* DIVIDER */
+    .div6 { height: 1px; background: linear-gradient(90deg, transparent, var(--gold6), transparent); }
+
+    /* ABOUT */
+    .about6 { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: center; }
+    .about6-text { flex: 1; min-width: 280px; }
+    .about6-text .eyebrow6 { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--burgundy); font-weight: 700; margin-bottom: 0.8rem; }
+    .about6-text h2 { font-family: Georgia, serif; font-size: 2rem; color: var(--dark6); margin-bottom: 1rem; }
+    .about6-text h2 span { color: var(--burgundy); font-style: italic; }
+    .about6-text p { color: var(--gray6); line-height: 1.8; margin-bottom: 0.8rem; }
+    .about6-aside { flex: 0 0 280px; }
+    .contact6-box { background: var(--deep); color: var(--cream6); border-radius: 8px; padding: 2rem; border-top: 3px solid var(--gold6); }
+    .contact6-box h3 { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold6); margin-bottom: 1.2rem; }
+    .cr6 { display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 0.9rem; }
+    .cr6 .ic6 { font-size: 1.1rem; flex-shrink: 0; }
+    .cr6 p { font-size: 0.88rem; color: rgba(249,244,236,0.8); line-height: 1.5; }
+    .cr6 a { color: var(--gold6); text-decoration: none; font-weight: 700; font-size: 1rem; }
+    .cr6 .note { font-size: 0.75rem; color: rgba(249,244,236,0.5); margin-top: 0.2rem; }
+
+    /* SERVICES */
+    .services6 { background: var(--warm6); padding: 4rem 2rem; }
+    .s6-inner { max-width: 1000px; margin: 0 auto; }
+    .s6-head { text-align: center; margin-bottom: 2.5rem; }
+    .s6-head h2 { font-family: Georgia, serif; font-size: 2rem; color: var(--dark6); margin-bottom: 0.4rem; }
+    .s6-head h2 span { color: var(--burgundy); font-style: italic; }
+    .s6-head p { color: var(--gray6); }
+    .services6-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+    .sc6 { background: var(--light6); border-radius: 8px; padding: 1.8rem; border-bottom: 3px solid var(--gold6); transition: all 0.2s; }
+    .sc6:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(107,28,28,0.1); }
+    .sc6 .ic6s { font-size: 2.2rem; margin-bottom: 0.8rem; }
+    .sc6 h3 { font-size: 1rem; font-weight: 700; color: var(--dark6); margin-bottom: 0.4rem; }
+    .sc6 p { font-size: 0.85rem; color: var(--gray6); line-height: 1.5; }
+    .sc6 .pr6 { color: var(--burgundy); font-weight: 700; font-size: 0.88rem; margin-top: 0.7rem; }
+
+    /* WHY */
+    .why6 { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .why6 h2 { font-family: Georgia, serif; font-size: 1.8rem; text-align: center; margin-bottom: 2.5rem; color: var(--dark6); }
+    .why6-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+    .w6c { background: var(--cream6); border: 1px solid var(--warm6); border-radius: 8px; padding: 1.8rem; border-left: 4px solid var(--gold6); }
+    .w6c .wi6 { font-size: 2rem; margin-bottom: 0.7rem; }
+    .w6c h3 { font-size: 0.95rem; font-weight: 700; color: var(--dark6); margin-bottom: 0.4rem; }
+    .w6c p { font-size: 0.84rem; color: var(--gray6); line-height: 1.5; }
+
+    /* CTA */
+    .cta6 { background: var(--burgundy); color: var(--cream6); padding: 4rem 2rem; text-align: center; }
+    .cta6 h2 { font-family: Georgia, serif; font-size: 2rem; margin-bottom: 0.8rem; }
+    .cta6 p { color: rgba(249,244,236,0.85); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .cta6 .ph6 { font-size: 2rem; font-weight: 900; color: var(--gold6); text-decoration: none; display: block; margin-bottom: 1.5rem; }
+    .btn-g6b { background: var(--gold6); color: var(--deep); padding: 0.9rem 2.5rem; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 1rem; display: inline-block; transition: all 0.2s; }
+    .btn-g6b:hover { background: var(--cream6); }
+
+    /* FOOTER */
+    footer { background: var(--deep); border-top: 2px solid var(--gold6); color: rgba(249,244,236,0.5); text-align: center; padding: 1.8rem; font-size: 0.85rem; }
+    footer strong { color: var(--cream6); }
+    footer a { color: var(--gold6); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nb6">
+    <div class="n6">Home Maid of Natchitoches</div>
+    <div class="s6">Professional Cleaning Services</div>
+  </div>
+  <a class="nc6" href="#contact">Contact Us</a>
+</nav>
+
+<section class="hero6">
+  <div class="hero6-ornament">— ✦ —</div>
+  <div class="city-tag">Natchitoches, Louisiana</div>
+  <h1>A Home Worth <em>Coming Back To.</em></h1>
+  <p>Professional residential and commercial cleaning services in Natchitoches, Louisiana. We bring southern pride and meticulous detail to every home we clean.</p>
+  <div class="hero6-btns">
+    <a class="btn-g6" href="#contact">📞 Get a Free Quote</a>
+    <a class="btn-out6" href="#services">Our Services</a>
+  </div>
+</section>
+
+<div class="div6"></div>
+
+<section class="about6" id="about">
+  <div class="about6-text">
+    <div class="eyebrow6">About Us</div>
+    <h2>Natchitoches' <span>Trusted Cleaning</span> Service</h2>
+    <p>Home Maid of Natchitoches brings professional-grade residential and commercial cleaning to Louisiana's oldest city. We understand that a clean space is a peaceful space — and our job is to give you that peace every time we walk out the door.</p>
+    <p>From regular maintenance cleaning to full home organization and office cleaning, we customize our service to fit your home and your schedule. Our team is professional, discreet, and detail-oriented in everything we do.</p>
+    <p>When you hire Home Maid, you're hiring a local Natchitoches business that cares deeply about the community we serve.</p>
+  </div>
+  <div class="about6-aside" id="contact">
+    <div class="contact6-box">
+      <h3>Contact Us</h3>
+      <div class="cr6"><span class="ic6">📍</span><p>Natchitoches, Louisiana<br>& surrounding Red River<br>Parish area</p></div>
+      <div class="cr6"><span class="ic6">📞</span><p>Call or message us on<br>Facebook: <strong>Home Maid of Natchitoches</strong><br><span class="note">Ask about our current phone number</span></p></div>
+      <div class="cr6"><span class="ic6">💰</span><p>Free quotes available<br>No obligation</p></div>
+      <div class="cr6"><span class="ic6">📅</span><p>Flexible scheduling<br>weekdays &amp; weekends</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="services6" id="services">
+  <div class="s6-inner">
+    <div class="s6-head">
+      <h2>Our <span>Cleaning Services</span></h2>
+      <p>Thorough, professional cleaning tailored to your home and budget.</p>
+    </div>
+    <div class="services6-grid">
+      <div class="sc6">
+        <div class="ic6s">🏠</div>
+        <h3>Residential Cleaning</h3>
+        <p>Full home cleaning service — bedrooms, bathrooms, kitchen, and living areas. Recurring or one-time.</p>
+        <div class="pr6">Custom quote available</div>
+      </div>
+      <div class="sc6">
+        <div class="ic6s">🏢</div>
+        <h3>Office Cleaning</h3>
+        <p>Professional office and small commercial space cleaning. Keep your workspace presentable and hygienic.</p>
+        <div class="pr6">Custom quote available</div>
+      </div>
+      <div class="sc6">
+        <div class="ic6s">✨</div>
+        <h3>Deep Cleaning</h3>
+        <p>Top-to-bottom detailed cleaning of every surface, nook, and appliance. Perfect for spring cleaning or a reset.</p>
+        <div class="pr6">Custom quote available</div>
+      </div>
+      <div class="sc6">
+        <div class="ic6s">🗀️</div>
+        <h3>Organization Services</h3>
+        <p>Beyond cleaning — we help organize closets, pantries, and living areas for lasting tidiness.</p>
+        <div class="pr6">Custom quote available</div>
+      </div>
+      <div class="sc6">
+        <div class="ic6s">📦</div>
+        <h3>Move-In / Move-Out</h3>
+        <p>Move into a perfectly clean home or leave your old one spotless. Thorough and efficient move cleaning.</p>
+        <div class="pr6">Custom quote available</div>
+      </div>
+      <div class="sc6">
+        <div class="ic6s">📄</div>
+        <h3>Recurring Service</h3>
+        <p>Weekly or biweekly cleaning plans for consistent maintenance. Set it and forget it — we'll keep it clean.</p>
+        <div class="pr6">Monthly plans available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why6">
+  <h2>The Home Maid Promise</h2>
+  <div class="why6-grid">
+    <div class="w6c"><div class="wi6">🌹</div><h3>Southern Hospitality</h3><p>We bring genuine Louisiana care and warmth to every home we clean. You're not just a client — you're a neighbor.</p></div>
+    <div class="w6c"><div class="wi6">🔍</div><h3>Attention to Detail</h3><p>We don't just clean what you can see — we clean everything. Baseboards, vents, behind appliances, all of it.</p></div>
+    <div class="w6c"><div class="wi6">🤥</div><h3>Reliable & Trustworthy</h3><p>We show up on time, communicate clearly, and treat your home with respect. Trust is everything to us.</p></div>
+    <div class="w6c"><div class="wi6">📍<wiving span></div><h3>Local Natchitoches</h3><p>We're proud to serve Louisiana's oldest city. Local business, local pride, local excellence.</p></div>
+  </div>
+</section>
+
+<section class="cta6">
+  <h2>Ready for a Spotless Home?</h2>
+  <p>Get in touch with Home Maid of Natchitoches today for a free quote.</p>
+  <a class="ph6" href="tel:">📲 Message Us on Facebook</a>
+  <a class="btn-g6b" href="#contact">Request a Free Quote</a>
+</section>
+
+<footer>
+  <strong>Home Maid of Natchitoches</strong> &nbsp;|&nbsp; Natchitoches, Louisiana &nbsp;|&nbsp; <a href="https://www.facebook.com/natchmaid/" target="_blank">Find us on Facebook</a><br/>
+  <small>© 2025 Home Maid of Natchitoches. Professional cleaning services in Natchitoches, Louisiana.</small>
+</footer>
+
+</body>
+</html>
