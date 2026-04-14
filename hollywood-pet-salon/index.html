@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hollywood Pet Salon & Tanning – Talladega, AL</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --purple: #6b2d8b;
+      --deep-purple: #4a1a63;
+      --magenta: #c2185b;
+      --gold: #f9c74f;
+      --light-purple: #f3e8f9;
+      --white: #ffffff;
+      --dark: #1a0a2e;
+      --gray: #666;
+    }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--white); color: var(--dark); }
+
+    /* NAV */
+    nav { background: var(--deep-purple); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--gold); }
+    .brand-name { color: var(--gold); font-size: 1.2rem; font-weight: 800; letter-spacing: 1px; }
+    .brand-sub { color: rgba(255,255,255,0.6); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; }
+    nav a.nb { background: var(--magenta); color: white; padding: 0.6rem 1.4rem; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.2s; }
+    nav a.nb:hover { background: var(--gold); color: var(--dark); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--deep-purple) 0%, var(--purple) 50%, var(--magenta) 100%);
+      color: white;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before { content: '⭐'; position: absolute; top: 10%; left: 8%; font-size: 4rem; opacity: 0.1; }
+    .hero::after { content: '⭐'; position: absolute; bottom: 10%; right: 8%; font-size: 4rem; opacity: 0.1; }
+    .star-row { display: flex; gap: 0.3rem; justify-content: center; margin-bottom: 1.5rem; font-size: 1.5rem; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 0.8rem; line-height: 1.1; }
+    .hero h1 span { color: var(--gold); }
+    .hero p.sub { font-size: 1.1rem; color: rgba(255,255,255,0.85); max-width: 560px; margin: 0 auto 1.5rem; line-height: 1.6; }
+    .services-chips { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+    .chip { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-gold { background: var(--gold); color: var(--dark); padding: 0.95rem 2.2rem; border-radius: 25px; text-decoration: none; font-weight: 800; font-size: 1rem; transition: all 0.2s; display: inline-block; }
+    .btn-gold:hover { background: #ffd166; transform: translateY(-2px); }
+    .btn-ghost2 { border: 2px solid rgba(255,255,255,0.5); color: white; padding: 0.9rem 2.2rem; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.2s; display: inline-block; }
+    .btn-ghost2:hover { background: rgba(255,255,255,0.15); }
+
+    /* INFO BAR */
+    .info-bar { background: var(--gold); color: var(--dark); padding: 0.8rem 2rem; text-align: center; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; }
+
+    /* ABOUT */
+    .about { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .about-inner { display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: flex-start; }
+    .at { flex: 1; min-width: 260px; }
+    .at h2 { font-size: 1.9rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem; }
+    .at h2 span { color: var(--purple); }
+    .at p { color: var(--gray); line-height: 1.75; margin-bottom: 0.8rem; }
+    .exp-pill { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--light-purple); color: var(--purple); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-top: 0.5rem; }
+    .contact-card { flex: 0 0 260px; background: var(--deep-purple); color: white; border-radius: 12px; padding: 2rem; }
+    .contact-card h3 { font-size: 1rem; font-weight: 700; color: var(--gold); margin-bottom: 1.2rem; letter-spacing: 1px; text-transform: uppercase; }
+    .cc-row { display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 1rem; }
+    .cc-row .ic { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .cc-row p { font-size: 0.88rem; color: rgba(255,255,255,0.8); line-height: 1.5; }
+    .cc-row a { color: var(--gold); text-decoration: none; font-weight: 700; font-size: 1rem; }
+
+    /* SERVICES */
+    .services { background: var(--light-purple); padding: 4rem 2rem; }
+    .services-wrap { max-width: 1000px; margin: 0 auto; }
+    .sh2 { text-align: center; margin-bottom: 2.5rem; }
+    .sh2 h2 { font-size: 2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.4rem; }
+    .sh2 h2 span { color: var(--purple); }
+    .sh2 p { color: var(--gray); }
+    .dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    @media (max-width: 600px) { .dual-grid { grid-template-columns: 1fr; } }
+    .service-col h3 { font-size: 1.1rem; font-weight: 800; color: var(--deep-purple); border-bottom: 3px solid var(--magenta); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+    .svc-li { background: white; border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.8rem; }
+    .svc-li .sl-ico { font-size: 1.4rem; flex-shrink: 0; }
+    .svc-li-text h4 { font-size: 0.9rem; font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; }
+    .svc-li-text p { font-size: 0.8rem; color: var(--gray); line-height: 1.4; }
+    .svc-li-text .price { color: var(--magenta); font-weight: 700; font-size: 0.8rem; margin-top: 0.3rem; }
+
+    /* CTA */
+    .cta { background: linear-gradient(135deg, var(--magenta), var(--purple)); color: white; padding: 4rem 2rem; text-align: center; }
+    .cta h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.8rem; }
+    .cta p { color: rgba(255,255,255,0.85); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .cta .big-phone { font-size: 2.2rem; font-weight: 900; color: var(--gold); text-decoration: none; display: block; margin-bottom: 1.5rem; }
+    .btn-wh2 { background: white; color: var(--purple); padding: 0.9rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: 800; font-size: 1rem; transition: all 0.2s; display: inline-block; }
+    .btn-wh2:hover { background: var(--gold); color: var(--dark); }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.5); text-align: center; padding: 1.8rem; font-size: 0.85rem; }
+    footer strong { color: white; }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <div class="brand-name">🎬 Hollywood Pet Salon</div>
+    <div class="brand-sub">& Tanning — Talladega, AL</div>
+  </div>
+  <a class="nb" href="tel:2564930223">📞 Call Now</a>
+</nav>
+
+<section class="hero">
+  <div class="star-row">⭐⭐⭐⭐⭐</div>
+  <h1>Your Pet Deserves the <span>Star Treatment</span></h1>
+  <p class="sub">Professional pet grooming with 10+ years of experience — plus a 24-hour tanning salon for the humans! Talladega's one-of-a-kind beauty destination.</p>
+  <div class="services-chips">
+    <span class="chip">🐶 Dog Grooming</span>
+    <span class="chip">☀️ Tanning Salon</span>
+    <span class="chip">10+ Years Experience</span>
+  </div>
+  <div class="hero-btns">
+    <a class="btn-gold" href="tel:2564930223">📞 Book an Appointment</a>
+    <a class="btn-ghost2" href="#services">See Services</a>
+  </div>
+</section>
+
+<div class="info-bar">
+  📍 445 South St W, Talladega, AL 35160 &nbsp;|&nbsp; 📞 (256) 493-0223 &nbsp;|&nbsp; ☀️ Tanning: Open 24 Hours
+</div>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="at">
+      <h2>Talladega's <span>Glam Destination</span> for Pets &amp; People</h2>
+      <p>Hollywood Pet Salon & Tanning is a unique combination you won't find anywhere else in Talladega — professional pet grooming and a 24-hour tanning salon under one roof. Whether it's your dog's big grooming day or your own prep for a special occasion, we've got you covered.</p>
+      <p>With over 10 years of hands-on grooming experience, our team knows dogs inside and out. We work with all breeds and sizes, focusing on making every pet's experience comfortable, clean, and beautiful.</p>
+      <p>Our tanning salon runs 24 hours a day for your convenience — because great skin should be on your schedule, not ours.</p>
+      <span class="exp-pill">💅 10+ Years Grooming Experience</span>
+    </div>
+    <div class="contact-card">
+      <h3>📋 Contact Us</h3>
+      <div class="cc-row"><span class="ic">📍</span><p>445 South St W<br>Talladega, AL 35160</p></div>
+      <div class="cc-row"><span class="ic">📞</span><p><a href="tel:2564930223">(256) 493-0223</a></p></div>
+      <div class="cc-row"><span class="ic">🐶</span><p>Grooming by appointment<br>Call to schedule</p></div>
+      <div class="cc-row"><span class="ic">☀️</span><p>Tanning: Open 24 hours<br>No appointment needed</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-wrap">
+    <div class="sh2">
+      <h2>Our <span>Services</span></h2>
+      <p>Pet grooming + tanning — everything you and your fur baby need.</p>
+    </div>
+    <div class="dual-grid">
+      <div class="service-col">
+        <h3>🐾 Pet Grooming Services</h3>
+        <div class="svc-li"><span class="sl-ico">🛁</span><div class="svc-li-text"><h4>Bath & Dry</h4><p>Deep shampoo, conditioner, blow-dry, and brush-out for any breed.</p><div class="price">By breed/size</div></div></div>
+        <div class="svc-li"><span class="sl-ico">✂️</span><div class="svc-li-text"><h4>Full Groom</h4><p>Complete bath plus haircut styled to your preference. Nail trim included.</p><div class="price">By breed/size</div></div></div>
+        <div class="svc-li"><span class="sl-ico">💅</span><div class="svc-li-text"><h4>Nail Trim</h4><p>Quick clip to keep nails healthy and paws comfortable.</p><div class="price">Starting at $12</div></div></div>
+        <div class="svc-li"><span class="sl-ico">🌟</span><div class="svc-li-text"><h4>Teeth Brushing</h4><p>Keep those pearly whites clean with a gentle pet-safe teeth brush.</p><div class="price">Add-on</div></div></div>
+      </div>
+      <div class="service-col">
+        <h3>☀️ Tanning Salon Services</h3>
+        <div class="svc-li"><span class="sl-ico">🌅</span><div class="svc-li-text"><h4>Traditional Tanning Beds</h4><p>Multiple levels of UV tanning beds for a natural sun-kissed look.</p><div class="price">Call for session pricing</div></div></div>
+        <div class="svc-li"><span class="sl-ico">✨</span><div class="svc-li-text"><h4>Spray Tan</h4><p>Even, streak-free color without UV exposure. Perfect for any occasion.</p><div class="price">Call for pricing</div></div></div>
+        <div class="svc-li"><span class="sl-ico">⏰</span><div class="svc-li-text"><h4>24-Hour Access</h4><p>Our tanning salon is open around the clock — tan on your schedule.</p><div class="price">Monthly memberships available</div></div></div>
+        <div class="svc-li"><span class="sl-ico">🎁</span><div class="svc-li-text"><h4>Gift Cards</h4><p>Give the gift of beauty — pet groom or tanning sessions gift cards available.</p><div class="price">Ask about options</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Book Your Pet's Groom Today</h2>
+  <p>Call us to schedule — walk-ins welcome when slots are available.</p>
+  <a class="big-phone" href="tel:2564930223">(256) 493-0223</a>
+  <a class="btn-wh2" href="tel:2564930223">Schedule Now</a>
+</section>
+
+<footer>
+  <strong>Hollywood Pet Salon & Tanning</strong> &nbsp;|&nbsp; 445 South St W, Talladega, AL 35160 &nbsp;|&nbsp; <a href="tel:2564930223">(256) 493-0223</a><br/>
+  <small>© 2025 Hollywood Pet Salon & Tanning. Professional grooming + 24-hour tanning in Talladega, Alabama.</small>
+</footer>
+
+</body>
+</html>
