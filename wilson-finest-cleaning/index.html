@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wilson Finest Cleaning Service LLC – Wilson, NC</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy5: #0a2463;
+      --blue5: #1565c0;
+      --yellow5: #ffd700;
+      --sky5: #e3f0ff;
+      --white5: #ffffff;
+      --dark5: #0d1b2a;
+      --gray5: #4a5568;
+      --light: #f7faff;
+    }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--light); color: var(--dark5); }
+
+    /* NAV */
+    nav { background: var(--navy5); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--yellow5); }
+    .nb5 { }
+    .nb5 .n5 { font-size: 1.2rem; font-weight: 800; color: white; }
+    .nb5 .s5 { font-size: 0.68rem; color: rgba(255,255,255,0.65); letter-spacing: 2px; text-transform: uppercase; }
+    nav a.nc5 { background: var(--yellow5); color: var(--navy5); padding: 0.6rem 1.4rem; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 0.9rem; transition: all 0.2s; }
+    nav a.nc5:hover { background: white; }
+
+    /* HERO */
+    .hero {
+      background: var(--navy5);
+      color: white;
+      padding: 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; }
+    .hero-text { flex: 1; min-width: 280px; }
+    .hero-text .eyebrow5 { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--yellow5); font-weight: 700; margin-bottom: 1rem; }
+    .hero-text h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1rem; }
+    .hero-text h1 span { color: var(--yellow5); }
+    .hero-text p { font-size: 1.1rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 2rem; }
+    .hero-btns5 { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-y5 { background: var(--yellow5); color: var(--navy5); padding: 0.9rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 1rem; transition: all 0.2s; display: inline-block; }
+    .btn-y5:hover { background: #ffe55a; transform: translateY(-2px); }
+    .btn-ghost5 { border: 2px solid rgba(255,255,255,0.4); color: white; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.2s; display: inline-block; }
+    .btn-ghost5:hover { background: rgba(255,255,255,0.1); }
+    .hero-side { flex: 0 0 300px; }
+    .hero-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 2rem; }
+    .hero-card h3 { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--yellow5); margin-bottom: 1.2rem; }
+    .hc-row { display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 0.9rem; }
+    .hc-row .ic5 { font-size: 1.1rem; flex-shrink: 0; }
+    .hc-row p { font-size: 0.88rem; color: rgba(255,255,255,0.85); line-height: 1.5; }
+    .hc-row a { color: var(--yellow5); text-decoration: none; font-weight: 700; font-size: 1rem; }
+
+    /* SERVICES */
+    .services5 { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .s5-head { text-align: center; margin-bottom: 3rem; }
+    .s5-head h2 { font-size: 2rem; font-weight: 800; color: var(--dark5); margin-bottom: 0.4rem; }
+    .s5-head h2 span { color: var(--blue5); }
+    .s5-head p { color: var(--gray5); }
+    .services5-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+    .sc5 { background: white; border-radius: 10px; padding: 2rem; box-shadow: 0 2px 16px rgba(10,36,99,0.08); border-left: 4px solid var(--blue5); transition: all 0.2s; }
+    .sc5:hover { border-left-color: var(--yellow5); box-shadow: 0 6px 24px rgba(10,36,99,0.14); }
+    .sc5 .ic5s { font-size: 2.2rem; margin-bottom: 0.8rem; }
+    .sc5 h3 { font-size: 1rem; font-weight: 700; color: var(--dark5); margin-bottom: 0.4rem; }
+    .sc5 p { font-size: 0.85rem; color: var(--gray5); line-height: 1.6; }
+    .sc5 .pr5 { color: var(--blue5); font-weight: 700; font-size: 0.88rem; margin-top: 0.7rem; }
+
+    /* PROCESS */
+    .process { background: var(--sky5); padding: 4rem 2rem; }
+    .process-inner { max-width: 900px; margin: 0 auto; }
+    .proc-head { text-align: center; margin-bottom: 2.5rem; }
+    .proc-head h2 { font-size: 1.8rem; font-weight: 800; color: var(--dark5); }
+    .steps { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .step { background: white; border-radius: 10px; padding: 1.8rem; flex: 1; min-width: 200px; max-width: 220px; text-align: center; box-shadow: 0 2px 10px rgba(10,36,99,0.1); }
+    .step .snum { width: 40px; height: 40px; background: var(--navy5); color: var(--yellow5); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; margin: 0 auto 0.8rem; }
+    .step h3 { font-size: 0.95rem; font-weight: 700; color: var(--dark5); margin-bottom: 0.4rem; }
+    .step p { font-size: 0.82rem; color: var(--gray5); line-height: 1.5; }
+
+    /* WHY */
+    .why5 { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .why5 h2 { text-align: center; font-size: 2rem; font-weight: 800; color: var(--dark5); margin-bottom: 2.5rem; }
+    .why5-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .w5c { padding: 1.8rem; background: white; border-radius: 10px; border-bottom: 3px solid var(--yellow5); box-shadow: 0 1px 8px rgba(10,36,99,0.06); }
+    .w5c .wi5 { font-size: 2rem; margin-bottom: 0.7rem; }
+    .w5c h3 { font-size: 0.95rem; font-weight: 700; color: var(--dark5); margin-bottom: 0.4rem; }
+    .w5c p { font-size: 0.84rem; color: var(--gray5); line-height: 1.5; }
+
+    /* CTA */
+    .cta5 { background: linear-gradient(90deg, var(--navy5), var(--blue5)); color: white; padding: 4rem 2rem; text-align: center; }
+    .cta5 h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.8rem; }
+    .cta5 p { color: rgba(255,255,255,0.85); font-size: 1.05rem; margin-bottom: 1rem; }
+    .cta5 .ph5 { font-size: 2.2rem; font-weight: 900; color: var(--yellow5); text-decoration: none; display: block; margin-bottom: 1.5rem; }
+    .btn-y5b { background: var(--yellow5); color: var(--navy5); padding: 0.9rem 2.5rem; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 1rem; display: inline-block; transition: all 0.2s; }
+    .btn-y5b:hover { background: #ffe55a; }
+
+    /* FOOTER */
+    footer { background: var(--dark5); color: rgba(255,255,255,0.5); text-align: center; padding: 1.8rem; font-size: 0.85rem; }
+    footer strong { color: white; }
+    footer a { color: var(--yellow5); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nb5">
+    <div class="n5">Wilson Finest Cleaning Service LLC</div>
+    <div class="s5">Wilson, North Carolina</div>
+  </div>
+  <a class="nc5" href="tel:2523661869">📞 Free Quote</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="eyebrow5">Wilson, NC's Professional Cleaning Service</div>
+      <h1>The <span>Finest Clean</span> in Wilson, NC</h1>
+      <p>Residential and commercial cleaning services you can trust. We handle move-ins, move-outs, after-construction cleanup, and regular maintenance — all with detail and care.</p>
+      <div class="hero-btns5">
+        <a class="btn-y5" href="tel:2523661869">📞 Get a Free Quote</a>
+        <a class="btn-ghost5" href="#services">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="hero-card">
+        <h3>Contact Us</h3>
+        <div class="hc-row"><span class="ic5">📍</span><p>Wilson, NC &amp; surrounding Johnston, Nash, and Edgecombe County areas</p></div>
+        <div class="hc-row"><span class="ic5">📞</span><p><a href="tel:2523661869">(252) 366-1869</a></p></div>
+        <div class="hc-row"><span class="ic5">✅</span><p>Residential &amp; commercial<br>Free quotes available</p></div>
+        <div class="hc-row"><span class="ic5">📅</span><p>Flexible scheduling<br>to fit your needs</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services5" id="services">
+  <div class="s5-head">
+    <h2>Cleaning <span>Services We Offer</span></h2>
+    <p>From a routine clean to a full move-out — we do it all with the finest attention to detail.</p>
+  </div>
+  <div class="services5-grid">
+    <div class="sc5">
+      <div class="ic5s">🏡</div>
+      <h3>Residential Cleaning</h3>
+      <p>Regular home cleaning covering all rooms, bathrooms, kitchen, and living spaces. Weekly, biweekly, or monthly.</p>
+      <div class="pr5">Free quote available</div>
+    </div>
+    <div class="sc5">
+      <div class="ic5s">🏢</div>
+      <h3>Commercial Cleaning</h3>
+      <p>Keep your business or office space clean, professional, and welcoming. Flexible scheduling around business hours.</p>
+      <div class="pr5">Call for commercial pricing</div>
+    </div>
+    <div class="sc5">
+      <div class="ic5s">📦</div>
+      <h3>Move-In Cleaning</h3>
+      <p>Start fresh in a new space. We deep clean every corner so you can move in to a perfectly clean home.</p>
+      <div class="pr5">Call for quote</div>
+    </div>
+    <div class="sc5">
+      <div class="ic5s">🚚</div>
+      <h3>Move-Out Cleaning</h3>
+      <p>Leave your old property spotless. We help you pass your move-out inspection and get your deposit back.</p>
+      <div class="pr5">Call for quote</div>
+    </div>
+    <div class="sc5">
+      <div class="ic5s">🔨</div>
+      <h3>Post-Construction Cleanup</h3>
+      <p>After renovations or new construction, we remove dust, debris, and residue to make your space move-in ready.</p>
+      <div class="pr5">Call for quote</div>
+    </div>
+    <div class="sc5">
+      <div class="ic5s">✨</div>
+      <h3>Deep Cleaning</h3>
+      <p>A thorough top-to-bottom clean covering appliances, baseboards, blinds, and every overlooked surface.</p>
+      <div class="pr5">Call for quote</div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="process-inner">
+    <div class="proc-head">
+      <h2>How It Works</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="snum">1</div><h3>Call for a Quote</h3><p>Tell us about your space and cleaning needs. We'll give you a fair, no-obligation quote.</p></div>
+      <div class="step"><div class="snum">2</div><h3>Schedule a Time</h3><p>Pick a date and time that works for you. We're flexible and accommodating.</p></div>
+      <div class="step"><div class="snum">3</div><h3>We Come & Clean</h3><p>Our professional team arrives on time and cleans thoroughly from top to bottom.</p></div>
+      <div class="step"><div class="snum">4</div><h3>Enjoy Your Space</h3><p>Walk back into a fresh, spotless, professionally cleaned space. That's the Wilson Finest difference.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why5" id="about">
+  <h2>Why Wilson Finest?</h2>
+  <div class="why5-grid">
+    <div class="w5c"><div class="wi5">🏆</div><h3>Finest Quality Work</h3><p>The name says it all. We don't settle for good enough — everything we clean gets our full, detailed attention.</p></div>
+    <div class="w5c"><div class="wi5">📍</div><h3>Wilson, NC Locals</h3><p>We're from here and we serve here. Our reputation in this community is our most important asset.</p></div>
+    <div class="w5c"><div class="wi5">🤝</div><h3>Trustworthy Team</h3><p>We're reliable, respectful, and professional. You can trust us in your home or business with confidence.</p></div>
+    <div class="w5c"><div class="wi5">💰</div><h3>Competitive Pricing</h3><p>Quality cleaning at rates that work for the real families and businesses of Wilson, NC.</p></div>
+  </div>
+</section>
+
+<section class="cta5">
+  <h2>Get Your Free Quote Today</h2>
+  <p>Call us now to discuss your cleaning needs and get a free estimate.</p>
+  <a class="ph5" href="tel:2523661869">(252) 366-1869</a>
+  <a class="btn-y5b" href="tel:2523661869">Call for a Free Quote</a>
+</section>
+
+<footer>
+  <strong>Wilson Finest Cleaning Service LLC</strong> &nbsp;|&nbsp; Wilson, NC &nbsp;|&nbsp; <a href="tel:2523661869">(252) 366-1869</a><br/>
+  <small>© 2025 Wilson Finest Cleaning Service LLC. Professional residential and commercial cleaning in Wilson, North Carolina.</small>
+</footer>
+
+</body>
+</html>
